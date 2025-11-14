@@ -6,6 +6,7 @@ from github import fetch_github_metrics
 from twitter import fetch_twitter_metrics_batch, extract_tweet_id_from_url
 from semantic_scholar import fetch_semantic_scholar_metrics
 from schemas import Paper, TwitterMetrics
+from scoring import score_paper
 
 def collect_all_papers(seed_file: Path, output_file: Path, update_fields: list[str] = None):
     with open(seed_file, 'r') as f:
@@ -126,17 +127,19 @@ def collect_all_papers(seed_file: Path, output_file: Path, update_fields: list[s
         print(f"\n✓ Updated Twitter metrics\n")
 
     print("=" * 60)
-    print("Creating Paper objects...")
+    print("Creating Paper objects and calculating scores...")
     print("=" * 60)
     papers = []
     for arxiv_url, data in papers_data.items():
+        score = score_paper(data)
         paper = Paper(
             arxiv=data['arxiv'],
             github=data['github'],
             twitter=data['twitter'],
             semantic_scholar=data['semantic_scholar'],
             domains=data['domains'],
-            tags=data['tags']
+            tags=data['tags'],
+            relevance_score=score
         )
         papers.append(paper)
 

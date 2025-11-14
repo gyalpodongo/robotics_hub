@@ -6,28 +6,24 @@ def calculate_relevance_score(
     github_stars: Optional[int],
     twitter_views: Optional[int],
     published_date: str,
-    recency_weight: float = 0.40,
+    recency_weight: float = 0.50,
     citation_weight: float = 0.30,
-    github_weight: float = 0.20,
-    twitter_weight: float = 0.10
+    github_weight: float = 0.15,
+    twitter_weight: float = 0.05
 ) -> float:
     score = 0.0
-    available_weights = 0.0
 
     if citations is not None and citations > 0:
         citation_score = min(citations / 1000, 1.0)
         score += citation_score * citation_weight
-        available_weights += citation_weight
 
     if github_stars is not None and github_stars > 0:
         github_score = min(github_stars / 5000, 1.0)
         score += github_score * github_weight
-        available_weights += github_weight
 
     if twitter_views is not None and twitter_views > 0:
         twitter_score = min(twitter_views / 500000, 1.0)
         score += twitter_score * twitter_weight
-        available_weights += twitter_weight
 
     pub_date = datetime.strptime(published_date, "%Y-%m-%d")
     now = datetime.now()
@@ -35,26 +31,24 @@ def calculate_relevance_score(
 
     if days_old < 0:
         recency_score = 1.0
-    elif days_old < 90:
+    elif days_old < 30:
         recency_score = 1.0
-    elif days_old < 180:
+    elif days_old < 90:
         recency_score = 0.95
-    elif days_old < 365:
+    elif days_old < 180:
         recency_score = 0.85
+    elif days_old < 365:
+        recency_score = 0.70
     elif days_old < 730:
-        recency_score = 0.65
+        recency_score = 0.45
+    elif days_old < 1095:
+        recency_score = 0.25
     else:
-        recency_score = max(0.2, 0.65 - (days_old - 730) / 1460)
+        recency_score = max(0.05, 0.25 - (days_old - 1095) / 3650)
 
     score += recency_score * recency_weight
-    available_weights += recency_weight
 
-    if available_weights > 0:
-        normalized_score = score / available_weights
-    else:
-        normalized_score = 0.0
-
-    return normalized_score * 100
+    return score * 100
 
 def score_paper(paper_dict: dict) -> float:
     citations = paper_dict.get("semantic_scholar", {}).get("citation_count")

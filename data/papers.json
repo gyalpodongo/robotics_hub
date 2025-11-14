@@ -65,7 +65,8 @@
       "open-source",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.785634"
+    "added_date": "2025-11-14T00:17:04.785634",
+    "relevance_score": 68.00626
   },
   {
     "arxiv": {
@@ -171,7 +172,8 @@
       "Google",
       "RT-2"
     ],
-    "added_date": "2025-11-14T00:17:04.785696"
+    "added_date": "2025-11-14T00:17:04.785696",
+    "relevance_score": 49.084
   },
   {
     "arxiv": {
@@ -515,7 +517,8 @@
       "benchmark",
       "Google"
     ],
-    "added_date": "2025-11-14T00:17:04.785725"
+    "added_date": "2025-11-14T00:17:04.785725",
+    "relevance_score": 17.5
   },
   {
     "arxiv": {
@@ -576,7 +579,8 @@
       "prompts",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.785748"
+    "added_date": "2025-11-14T00:17:04.785748",
+    "relevance_score": 27.507054794520545
   },
   {
     "arxiv": {
@@ -638,7 +642,8 @@
       "simulation",
       "embodied-agent"
     ],
-    "added_date": "2025-11-14T00:17:04.785765"
+    "added_date": "2025-11-14T00:17:04.785765",
+    "relevance_score": 32.27372
   },
   {
     "arxiv": {
@@ -732,7 +737,8 @@
       "NVIDIA",
       "foundation-model"
     ],
-    "added_date": "2025-11-14T00:17:04.785786"
+    "added_date": "2025-11-14T00:17:04.785786",
+    "relevance_score": 47.75145
   },
   {
     "arxiv": {
@@ -790,7 +796,8 @@
       "failure-detection",
       "reasoning"
     ],
-    "added_date": "2025-11-14T00:17:04.785802"
+    "added_date": "2025-11-14T00:17:04.785802",
+    "relevance_score": 25.111620000000002
   },
   {
     "arxiv": {
@@ -861,7 +868,8 @@
       "action",
       "Microsoft"
     ],
-    "added_date": "2025-11-14T00:17:04.785820"
+    "added_date": "2025-11-14T00:17:04.785820",
+    "relevance_score": 36.122
   },
   {
     "arxiv": {
@@ -919,7 +927,8 @@
       "video-generation",
       "ByteDance"
     ],
-    "added_date": "2025-11-14T00:17:04.785835"
+    "added_date": "2025-11-14T00:17:04.785835",
+    "relevance_score": 29.237999999999996
   },
   {
     "arxiv": {
@@ -991,7 +1000,8 @@
       "embodied-LLM",
       "Google"
     ],
-    "added_date": "2025-11-14T00:17:04.785851"
+    "added_date": "2025-11-14T00:17:04.785851",
+    "relevance_score": 45.217530000000004
   },
   {
     "arxiv": {
@@ -1048,7 +1058,8 @@
       "visuomotor",
       "imitation-learning"
     ],
-    "added_date": "2025-11-14T00:17:04.785866"
+    "added_date": "2025-11-14T00:17:04.785866",
+    "relevance_score": 53.80417
   },
   {
     "arxiv": {
@@ -1105,7 +1116,8 @@
       "policy",
       "point-cloud"
     ],
-    "added_date": "2025-11-14T00:17:04.785910"
+    "added_date": "2025-11-14T00:17:04.785910",
+    "relevance_score": 30.431770000000004
   },
   {
     "arxiv": {
@@ -1160,7 +1172,8 @@
       "consistency",
       "real-time"
     ],
-    "added_date": "2025-11-14T00:17:04.785924"
+    "added_date": "2025-11-14T00:17:04.785924",
+    "relevance_score": 26.52423
   },
   {
     "arxiv": {
@@ -1216,7 +1229,8 @@
       "policy",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.785940"
+    "added_date": "2025-11-14T00:17:04.785940",
+    "relevance_score": 25.74804
   },
   {
     "arxiv": {
@@ -1271,7 +1285,8 @@
       "policy",
       "action-chunking"
     ],
-    "added_date": "2025-11-14T00:17:04.785954"
+    "added_date": "2025-11-14T00:17:04.785954",
+    "relevance_score": 23.676
   },
   {
     "arxiv": {
@@ -1332,7 +1347,8 @@
       "sparse",
       "reusable"
     ],
-    "added_date": "2025-11-14T00:17:04.785969"
+    "added_date": "2025-11-14T00:17:04.785969",
+    "relevance_score": 23.852999999999998
   },
   {
     "arxiv": {
@@ -1386,7 +1402,8 @@
       "3D",
       "scene-representation"
     ],
-    "added_date": "2025-11-14T00:17:04.785984"
+    "added_date": "2025-11-14T00:17:04.785984",
+    "relevance_score": 29.887960000000003
   },
   {
     "arxiv": {
@@ -1443,7 +1460,8 @@
       "policy",
       "UC-Berkeley"
     ],
-    "added_date": "2025-11-14T00:17:04.785998"
+    "added_date": "2025-11-14T00:17:04.785998",
+    "relevance_score": 32.12077
   },
   {
     "arxiv": {
@@ -1503,7 +1521,8 @@
       "PPO",
       "Princeton"
     ],
-    "added_date": "2025-11-14T00:17:04.786027"
+    "added_date": "2025-11-14T00:17:04.786027",
+    "relevance_score": 28.57473
   },
   {
     "arxiv": {
@@ -1556,7 +1575,8 @@
       "multi-task",
       "3D"
     ],
-    "added_date": "2025-11-14T00:17:04.786042"
+    "added_date": "2025-11-14T00:17:04.786042",
+    "relevance_score": 22.78802
   },
   {
     "arxiv": {
@@ -1616,7 +1636,8 @@
       "reward-design",
       "NVIDIA"
     ],
-    "added_date": "2025-11-14T00:17:04.786057"
+    "added_date": "2025-11-14T00:17:04.786057",
+    "relevance_score": 34.556
   },
   {
     "arxiv": {
@@ -1675,7 +1696,8 @@
       "NVIDIA",
       "open-ended"
     ],
-    "added_date": "2025-11-14T00:17:04.786071"
+    "added_date": "2025-11-14T00:17:04.786071",
+    "relevance_score": 57.49999999999999
   },
   {
     "arxiv": {
@@ -1765,7 +1787,8 @@
       "survey",
       "Tsinghua"
     ],
-    "added_date": "2025-11-14T00:17:04.786092"
+    "added_date": "2025-11-14T00:17:04.786092",
+    "relevance_score": 53.608
   },
   {
     "arxiv": {
@@ -1822,7 +1845,8 @@
       "UMI",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.786108"
+    "added_date": "2025-11-14T00:17:04.786108",
+    "relevance_score": 30.017380000000003
   },
   {
     "arxiv": {
@@ -1879,7 +1903,8 @@
       "hand",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.786129"
+    "added_date": "2025-11-14T00:17:04.786129",
+    "relevance_score": 43.235
   },
   {
     "arxiv": {
@@ -1933,7 +1958,8 @@
       "XR",
       "ByteDance"
     ],
-    "added_date": "2025-11-14T00:17:04.786145"
+    "added_date": "2025-11-14T00:17:04.786145",
+    "relevance_score": 42.559999999999995
   },
   {
     "arxiv": {
@@ -1989,7 +2015,8 @@
       "interactive-learning",
       "RoboCopilot"
     ],
-    "added_date": "2025-11-14T00:17:04.786167"
+    "added_date": "2025-11-14T00:17:04.786167",
+    "relevance_score": 35.36
   },
   {
     "arxiv": {
@@ -2139,7 +2166,8 @@
       "in-the-wild",
       "manipulation"
     ],
-    "added_date": "2025-11-14T00:17:04.786186"
+    "added_date": "2025-11-14T00:17:04.786186",
+    "relevance_score": 34.5
   },
   {
     "arxiv": {
@@ -2194,7 +2222,8 @@
       "lifelong-learning",
       "knowledge-transfer"
     ],
-    "added_date": "2025-11-14T00:17:04.786199"
+    "added_date": "2025-11-14T00:17:04.786199",
+    "relevance_score": 15.872
   },
   {
     "arxiv": {
@@ -2251,7 +2280,8 @@
       "digital-twin",
       "gaussian-splatting"
     ],
-    "added_date": "2025-11-14T00:17:04.786211"
+    "added_date": "2025-11-14T00:17:04.786211",
+    "relevance_score": 35.059999999999995
   },
   {
     "arxiv": {
@@ -2309,7 +2339,8 @@
       "human-videos",
       "cross-embodiment"
     ],
-    "added_date": "2025-11-14T00:17:04.786230"
+    "added_date": "2025-11-14T00:17:04.786230",
+    "relevance_score": 19.369999999999997
   },
   {
     "arxiv": {
@@ -2369,7 +2400,8 @@
       "procedural-generation",
       "RoboGen"
     ],
-    "added_date": "2025-11-14T00:17:04.786244"
+    "added_date": "2025-11-14T00:17:04.786244",
+    "relevance_score": 17.06
   },
   {
     "arxiv": {
@@ -2427,7 +2459,8 @@
       "diffusion",
       "Dreamitate"
     ],
-    "added_date": "2025-11-14T00:17:04.786256"
+    "added_date": "2025-11-14T00:17:04.786256",
+    "relevance_score": 23.97
   },
   {
     "arxiv": {
@@ -2482,7 +2515,8 @@
       "foundation-model",
       "NVIDIA"
     ],
-    "added_date": "2025-11-14T00:17:04.786270"
+    "added_date": "2025-11-14T00:17:04.786270",
+    "relevance_score": 22.5
   },
   {
     "arxiv": {
@@ -2539,7 +2573,8 @@
       "contact-rich",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.786291"
+    "added_date": "2025-11-14T00:17:04.786291",
+    "relevance_score": 22.776000000000003
   },
   {
     "arxiv": {
@@ -2595,7 +2630,8 @@
       "collaboration",
       "CoGrasp"
     ],
-    "added_date": "2025-11-14T00:17:04.786306"
+    "added_date": "2025-11-14T00:17:04.786306",
+    "relevance_score": 12.192054794520548
   },
   {
     "arxiv": {
@@ -2653,7 +2689,8 @@
       "hardware",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.786539"
+    "added_date": "2025-11-14T00:17:04.786539",
+    "relevance_score": 36.672579999999996
   },
   {
     "arxiv": {
@@ -2714,7 +2751,8 @@
       "value-maps",
       "Google"
     ],
-    "added_date": "2025-11-14T00:17:04.786567"
+    "added_date": "2025-11-14T00:17:04.786567",
+    "relevance_score": 32.720000000000006
   },
   {
     "arxiv": {
@@ -2777,7 +2815,8 @@
       "planning",
       "Stanford"
     ],
-    "added_date": "2025-11-14T00:17:04.786582"
+    "added_date": "2025-11-14T00:17:04.786582",
+    "relevance_score": 25.417999999999996
   },
   {
     "arxiv": {
@@ -2832,7 +2871,8 @@
       "exploration",
       "NoMaD"
     ],
-    "added_date": "2025-11-14T00:17:04.786593"
+    "added_date": "2025-11-14T00:17:04.786593",
+    "relevance_score": 18.68
   },
   {
     "arxiv": {
@@ -2907,7 +2947,8 @@
       "DINOv2",
       "Meta"
     ],
-    "added_date": "2025-11-14T00:17:04.786608"
+    "added_date": "2025-11-14T00:17:04.786608",
+    "relevance_score": 42.5
   },
   {
     "arxiv": {
@@ -2964,7 +3005,8 @@
       "code-generation",
       "Google"
     ],
-    "added_date": "2025-11-14T00:17:04.786621"
+    "added_date": "2025-11-14T00:17:04.786621",
+    "relevance_score": 41.67808219178082
   },
   {
     "arxiv": {
@@ -3025,7 +3067,8 @@
       "prompting",
       "ProgPrompt"
     ],
-    "added_date": "2025-11-14T00:17:04.786646"
+    "added_date": "2025-11-14T00:17:04.786646",
+    "relevance_score": 35.73027397260274
   },
   {
     "arxiv": {
@@ -3082,7 +3125,8 @@
       "planning",
       "AutoTAMP"
     ],
-    "added_date": "2025-11-14T00:17:04.786660"
+    "added_date": "2025-11-14T00:17:04.786660",
+    "relevance_score": 16.79
   },
   {
     "arxiv": {
@@ -3136,7 +3180,8 @@
       "collaboration",
       "RoCo"
     ],
-    "added_date": "2025-11-14T00:17:04.786672"
+    "added_date": "2025-11-14T00:17:04.786672",
+    "relevance_score": 18.2
   },
   {
     "arxiv": {
@@ -3193,6 +3238,7 @@
       "LLM",
       "gestures"
     ],
-    "added_date": "2025-11-14T00:17:04.786684"
+    "added_date": "2025-11-14T00:17:04.786684",
+    "relevance_score": 35.0
   }
 ]

@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from scoring import score_paper
 
 def generate_paper_markdown(paper: dict) -> str:
     arxiv = paper['arxiv']
@@ -30,7 +29,7 @@ def generate_paper_markdown(paper: dict) -> str:
     domains = ', '.join(paper.get('domains', []))
     tags = ', '.join([f'`{tag}`' for tag in paper.get('tags', [])])
 
-    relevance_score = score_paper(paper)
+    relevance_score = paper.get('relevance_score', 0)
 
     md = f"""# {title}
 

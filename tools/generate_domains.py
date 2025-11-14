@@ -7,7 +7,6 @@ from datetime import datetime
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
-from scoring import score_paper
 
 load_dotenv()
 
@@ -308,10 +307,9 @@ def get_papers_for_domain(domain: str, papers_file: Path) -> list[dict]:
         papers = json.load(f)
 
     domain_papers = [p for p in papers if domain in p.get('domains', [])]
-    papers_with_scores = [(p, score_paper(p)) for p in domain_papers]
-    papers_with_scores.sort(key=lambda x: x[1], reverse=True)
+    domain_papers.sort(key=lambda p: p.get('relevance_score', 0), reverse=True)
 
-    return [p for p, _ in papers_with_scores]
+    return domain_papers
 
 def load_previous_trends(domain: str, data_dir: Path) -> str | None:
     trends_file = data_dir / f"trends_{domain}.txt"
