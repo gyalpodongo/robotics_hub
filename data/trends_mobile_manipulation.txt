@@ -1,32 +1,3 @@
-# Mobile Manipulation & Navigation
-
-Mobile manipulation combines navigation and manipulation, enabling robots to move through environments and perform tasks.
-
-## What is Mobile Manipulation?
-
-Mobile manipulation involves robots with mobility and manipulation capabilities for multi-room tasks.
-
-## Key Approaches
-
-### Language-Guided Systems
-**TidyBot** uses LLMs for personalized robot assistance.
-
-### Vision-Based Navigation
-**NoMaD** employs diffusion policies for navigation.
-
-## Important Considerations
-
-- **Task decomposition**: Navigation and manipulation subgoals
-- **Multi-room reasoning**: Planning across spaces
-- **Energy efficiency**: Battery optimization
-
-
----
-
-## 🔥 Latest Trends & Research Directions
-
-*Last Updated: 2025-11-14 00:42 UTC*
-
 ### 1. Emerging Techniques
 
 *   **Diffusion Policies for Action Generation:** NoMaD leverages diffusion models to generate actions in mobile navigation. This contrasts with traditional methods that predict point estimates of actions or rely on discrete action spaces. The iterative denoising process of diffusion models allows for modeling complex, multimodal action distributions, especially beneficial during exploration where uncertainty is high.
@@ -56,16 +27,3 @@ Mobile manipulation involves robots with mobility and manipulation capabilities 
 *   **Combining Diffusion Policies with LLMs:** Integrating the action generation capabilities of diffusion policies with the reasoning abilities of LLMs could lead to more intelligent and adaptable robots. For instance, an LLM could generate high-level task plans, and a diffusion policy could execute those plans in a robust and flexible manner.
 *   **Learning Task-Specific Visual Representations:** NoMaD emphasizes the importance of the visual encoder. Further research could explore learning task-specific visual representations tailored to the needs of diffusion policies or LLM-based reasoning, potentially improving performance in challenging environments.
 *   **Interactive Learning with Human Feedback:** Developing methods for robots to learn from human feedback in real-time is a promising area for exploration. This could involve using reinforcement learning techniques or leveraging LLMs to interpret natural language feedback and adapt the robot's behavior accordingly.
-
----
-
-## 📄 Papers in This Domain
-
-| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
-|-------|-----|------|---------|--------|-----------|--------|---------|----------|
-| [NoMaD: Goal Masked Diffusion Policies...](../papers/2310.07896.md) | [2310.07896](https://arxiv.org/abs/2310.07896) | Oct 11, 2023 | Sridhar et al. | — | [206](https://www.semanticscholar.org/paper/05bad81069c8b11202e90ac16c543efc774e2800)<br>📈25 | None | [Oct 11, 2023](../papers/2310.07896.md) | — |
-| [TidyBot: Personalized Robot Assistanc...](../papers/2305.05658.md) | [2305.05658](https://arxiv.org/abs/2305.05658) | May 09, 2023 | Wu et al. | ⭐[666](https://github.com/jimmyyhwu/tidybot)<br>🔀[84](https://github.com/jimmyyhwu/tidybot) | [364](https://www.semanticscholar.org/paper/e7a4e987dc250ac6a016ee2011bc7a552cfa8e8a)<br>📈16 | 0 | [May 09, 2023](../papers/2305.05658.md) | — |
-
----
-
-*This page is automatically updated with the latest research trends and papers.*

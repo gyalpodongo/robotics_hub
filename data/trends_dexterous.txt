@@ -1,32 +1,3 @@
-# Dexterous Manipulation
-
-Dexterous manipulation using multi-fingered hands enables human-like object interactions. Recent progress combines novel hardware with learning-based control.
-
-## What is Dexterous Manipulation?
-
-Dexterous manipulation uses articulated hands with 15-20 DoFs for complex grasps and in-hand manipulations.
-
-## Key Approaches
-
-### Low-Cost Hardware
-**RUKA** provides affordable, 3D-printed tendon-driven hands.
-
-### Teleoperation
-**DexUMI** uses human hands as manipulation interfaces.
-
-## Important Considerations
-
-- **Hardware complexity**: Many actuators and contact points
-- **Control difficulty**: High-dimensional action spaces
-- **Tactile sensing**: Fingertip force/torque sensors crucial
-
-
----
-
-## 🔥 Latest Trends & Research Directions
-
-*Last Updated: 2025-11-14 00:42 UTC*
-
 ### 1. Emerging Techniques
 
 Several emerging techniques are gaining traction in dexterous manipulation:
@@ -73,17 +44,3 @@ Several areas warrant further research:
 *   **Meta-Learning for Few-Shot Adaptation:** Meta-learning can enable robots to quickly adapt to new tasks with limited data.
 *   **Multi-Modal Sensor Fusion:** Fusing information from multiple sensors (vision, tactile, force) can improve the robustness and accuracy of manipulation policies.
 *   **Formal methods for HRI (Human-Robot Interactions) that account for safety and social norms.**
-
----
-
-## 📄 Papers in This Domain
-
-| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
-|-------|-----|------|---------|--------|-----------|--------|---------|----------|
-| [DexUMI: Using Human Hand as the Unive...](../papers/2505.21864.md) | [2505.21864](https://arxiv.org/abs/2505.21864) | May 28, 2025 | Xu et al. | ⭐[145](https://github.com/real-stanford/DexUMI)<br>🔀[13](https://github.com/real-stanford/DexUMI) | [10](https://www.semanticscholar.org/paper/22550cdfb498e0890e75e504d8ab5dd5e0ca8729) | 3 | [May 28, 2025](../papers/2505.21864.md) | — |
-| [RUKA: Rethinking the Design of Humano...](../papers/2504.13165.md) | [2504.13165](https://arxiv.org/abs/2504.13165) | Apr 17, 2025 | Zorin et al. | ⭐[153](https://github.com/ruka-hand/RUKA)<br>🔀[20](https://github.com/ruka-hand/RUKA) | [4](https://www.semanticscholar.org/paper/dd9e6a02ba61cb4839a22c6f53eb867f95828ef8) | 3 | [Apr 17, 2025](../papers/2504.13165.md) | ❤️[445](https://x.com/irmakkguzey/status/1913276064287305730) 🔁[100](https://x.com/irmakkguzey/status/1913276064287305730)<br>👁️[109.4k](https://x.com/irmakkguzey/status/1913276064287305730) |
-| [CoGrasp: 6-DoF Grasp Generation for H...](../papers/2210.03173.md) | [2210.03173](https://arxiv.org/abs/2210.03173) | Oct 06, 2022 | Keshari et al. | — | [8](https://www.semanticscholar.org/paper/33b5b1ad60f5f647208b75e8d2f5069bc2c4bc52) | None | [Oct 06, 2022](../papers/2210.03173.md) | — |
-
----
-
-*This page is automatically updated with the latest research trends and papers.*

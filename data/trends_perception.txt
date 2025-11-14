@@ -1,32 +1,3 @@
-# Perception & Scene Understanding
-
-Perception systems extract structured information from sensors. Recent advances leverage foundation models for zero-shot generalization.
-
-## What is Robot Perception?
-
-Robot perception processes sensors to extract object locations, poses, and semantic labels.
-
-## Key Approaches
-
-### Vision Foundation Models
-**DINOv2** provides self-supervised visual features.
-
-### 6D Pose Estimation
-**FoundationPose** unifies pose estimation for novel objects.
-
-## Important Considerations
-
-- **Lighting robustness**: Handling varied illumination
-- **Real-time performance**: 30+ Hz processing
-- **Multimodal fusion**: RGB, depth, and tactile sensing
-
-
----
-
-## 🔥 Latest Trends & Research Directions
-
-*Last Updated: 2025-11-14 00:43 UTC*
-
 ### 1. Emerging Techniques
 
 *   **Self-Supervised Learning (SSL) at Scale:** DINOv2 exemplifies the power of scaling SSL with large datasets (142M images) and billion-parameter models. The combination of DINO, iBOT, and SwAV centering provides robust, general-purpose visual features. Training at increased resolution towards the end of training also shows promise.
@@ -63,16 +34,3 @@ Robot perception processes sensors to extract object locations, poses, and seman
 *   **Active Learning for Data Curation:** Developing active learning strategies for curating large-scale datasets could significantly reduce the cost and effort associated with data annotation. This could involve selecting the most informative samples for annotation or using weak supervision techniques to generate noisy labels.
 *   **Few-Shot and Zero-Shot Pose Estimation:** Further research into few-shot and zero-shot pose estimation is needed to enable robots and autonomous systems to interact with novel objects in unstructured environments.
 *   **Uncertainty Estimation in Perception:** Developing methods for estimating uncertainty in perception tasks is crucial for building robust and reliable systems. This could involve using Bayesian neural networks or other techniques for quantifying uncertainty in model predictions.
-
----
-
-## 📄 Papers in This Domain
-
-| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
-|-------|-----|------|---------|--------|-----------|--------|---------|----------|
-| [DINOv2: Learning Robust Visual Featur...](../papers/2304.07193.md) | [2304.07193](https://arxiv.org/abs/2304.07193) | Apr 14, 2023 | Oquab et al. | — | [5.2k](https://www.semanticscholar.org/paper/5a9cb1b3dc4655218b3deeaf4a2417a9a8cd0891)<br>📈840 | None | [Apr 14, 2023](../papers/2304.07193.md) | — |
-| [FoundationPose: Unified 6D Pose Estim...](../papers/2312.08344.md) | [2312.08344](https://arxiv.org/abs/2312.08344) | Dec 13, 2023 | Wen et al. | — | — | None | [Dec 13, 2023](../papers/2312.08344.md) | — |
-
----
-
-*This page is automatically updated with the latest research trends and papers.*

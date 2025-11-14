@@ -24,11 +24,11 @@ jobs:
         run: |
           pip install requests pydantic google-genai python-dotenv
 
-      - name: Generate dynamic domain trends
+      - name: Generate domain trends
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python tools/generate_dynamic_domains.py
+          python tools/generate_domains.py
 
       - name: Commit and push if changed
         run: |

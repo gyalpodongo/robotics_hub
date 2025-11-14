@@ -1,36 +1,3 @@
-# Reinforcement Learning
-
-Reinforcement Learning (RL) enables robots to learn behaviors through trial-and-error, guided by reward signals. Recent breakthroughs combine RL with LLMs for automated reward design and open-ended exploration.
-
-## What is Robot RL?
-
-Robot RL trains policies to maximize cumulative reward by exploring and learning from feedback.
-
-## Key Approaches
-
-### LLM-Guided Reward Design
-**Eureka** uses LLMs to automatically write reward functions as executable code.
-
-### Open-Ended Exploration
-**Voyager** creates lifelong learning agents that autonomously discover and compose skills.
-
-### Diffusion RL
-Methods like **DPPO** combine diffusion models with RL for fine-tuning policies.
-
-## Important Considerations
-
-- **Sample efficiency**: Simulation is essential
-- **Reward engineering**: Capturing task intent correctly
-- **Sim-to-real transfer**: Robust policy transfer
-- **Safety**: Respecting constraints during exploration
-
-
----
-
-## 🔥 Latest Trends & Research Directions
-
-*Last Updated: 2025-11-14 00:36 UTC*
-
 ### 1. Emerging Techniques
 
 The analyzed papers highlight several emerging techniques gaining traction in reinforcement learning:
@@ -77,19 +44,3 @@ Several areas warrant further exploration:
 *   **Curriculum Learning and Task Composition:** Developing more sophisticated curriculum learning strategies to guide agents through increasingly complex tasks, enabling the acquisition of a broad range of skills.
 *   **Human-in-the-Loop RL:** Developing methods for seamlessly integrating human feedback into the RL training process, improving the safety, alignment, and performance of the agents.
 *   **Efficient Exploration Strategies:** Designing efficient exploration strategies that can effectively guide the agent to discover novel and rewarding behaviors, especially in sparse reward environments.
-
----
-
-## 📄 Papers in This Domain
-
-| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
-|-------|-----|------|---------|--------|-----------|--------|---------|----------|
-| [A Survey of Reinforcement Learning fo...](../papers/2509.08827.md) | [2509.08827](https://arxiv.org/abs/2509.08827) | Sep 10, 2025 | Zhang et al. | ⭐[2.0k](https://github.com/TsinghuaC3I/Awesome-RL-for-LRMs)<br>🔀[114](https://github.com/TsinghuaC3I/Awesome-RL-for-LRMs) | — | 0 | [Sep 10, 2025](../papers/2509.08827.md) | — |
-| [Voyager: An Open-Ended Embodied Agent...](../papers/2305.16291.md) | [2305.16291](https://arxiv.org/abs/2305.16291) | May 25, 2023 | Wang et al. | ⭐[6.5k](https://github.com/MineDojo/Voyager)<br>🔀[614](https://github.com/MineDojo/Voyager) | [1.1k](https://www.semanticscholar.org/paper/f197bf0fc2f228483f6af3285000d54d8d97f9eb)<br>📈108 | 9 | [May 25, 2023](../papers/2305.16291.md) | — |
-| [Eureka: Human-Level Reward Design via...](../papers/2310.12931.md) | [2310.12931](https://arxiv.org/abs/2310.12931) | Oct 19, 2023 | Ma et al. | ⭐[3.1k](https://github.com/eureka-research/Eureka)<br>🔀[280](https://github.com/eureka-research/Eureka) | [429](https://www.semanticscholar.org/paper/6ca16c1c2c60ceda87242c8f8e522d12cc4a13bc)<br>📈51 | 38 | [Oct 19, 2023](../papers/2310.12931.md) | — |
-| [Training Diffusion Models with Reinfo...](../papers/2305.13301.md) | [2305.13301](https://arxiv.org/abs/2305.13301) | May 22, 2023 | Black et al. | ⭐[529](https://github.com/jannerm/ddpo)<br>🔀[33](https://github.com/jannerm/ddpo) | [558](https://www.semanticscholar.org/paper/d8c78221e4366d6a72a6b3e41e35b706cc45c01d)<br>📈114 | 4 | [May 22, 2023](../papers/2305.13301.md) | ❤️[823](https://x.com/svlevine/status/1660707076946141184) 🔁[177](https://x.com/svlevine/status/1660707076946141184)<br>👁️[129.4k](https://x.com/svlevine/status/1660707076946141184) |
-| [Diffusion Policy Policy Optimization](../papers/2409.00588.md) | [2409.00588](https://arxiv.org/abs/2409.00588) | Sep 01, 2024 | Ren et al. | ⭐[681](https://github.com/irom-princeton/dppo)<br>🔀[85](https://github.com/irom-princeton/dppo) | [109](https://www.semanticscholar.org/paper/e596c98260ec4096eaeb491eb75f91a8339fcf48)<br>📈16 | 23 | [Sep 01, 2024](../papers/2409.00588.md) | ❤️[476](https://x.com/allenzren/status/1831403337528570132) 🔁[93](https://x.com/allenzren/status/1831403337528570132)<br>👁️[76.2k](https://x.com/allenzren/status/1831403337528570132) |
-
----
-
-*This page is automatically updated with the latest research trends and papers.*
