@@ -1,0 +1,23 @@
+[
+  {
+    "arxiv_url": "https://arxiv.org/abs/2402.10329",
+    "twitter_url": "https://x.com/chichengcc/status/1758539728444629158",
+    "github_url": "https://github.com/real-stanford/universal_manipulation_interface",
+    "domains": ["data_collection"],
+    "tags": ["manipulation", "dataset", "UMI"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2406.09246",
+    "twitter_url": "https://x.com/moo_jin_kim/status/1801548441102991771",
+    "github_url": "https://github.com/openvla/openvla",
+    "domains": ["vla"],
+    "tags": ["VLA", "vision-language-action", "manipulation"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2504.13165",
+    "twitter_url": "https://x.com/irmakkguzey/status/1913276064287305730",
+    "github_url": "https://github.com/ruka-hand/RUKA",
+    "domains": ["manipulation"],
+    "tags": ["manipulation", "hand", "dexterous"]
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "arxiv": {
+      "arxiv_id": "2402.10329v3",
+      "title": "Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots",
+      "authors": [
+        "Cheng Chi",
+        "Zhenjia Xu",
+        "Chuer Pan",
+        "Eric Cousineau",
+        "Benjamin Burchfiel",
+        "Siyuan Feng",
+        "Russ Tedrake",
+        "Shuran Song"
+      ],
+      "summary": "We present Universal Manipulation Interface (UMI) -- a data collection and policy learning framework that allows direct skill transfer from in-the-wild human demonstrations to deployable robot policies. UMI employs hand-held grippers coupled with careful interface design to enable portable, low-cost, and information-rich data collection for challenging bimanual and dynamic manipulation demonstrations. To facilitate deployable policy learning, UMI incorporates a carefully designed policy interface with inference-time latency matching and a relative-trajectory action representation. The resulting learned policies are hardware-agnostic and deployable across multiple robot platforms. Equipped with these features, UMI framework unlocks new robot manipulation capabilities, allowing zero-shot generalizable dynamic, bimanual, precise, and long-horizon behaviors, by only changing the training data for each task. We demonstrate UMI's versatility and efficacy with comprehensive real-world experiments, where policies learned via UMI zero-shot generalize to novel environments and objects when trained on diverse human demonstrations. UMI's hardware and software system is open-sourced at https://umi-gripper.github.io.",
+      "published_date": "2024-02-15",
+      "pdf_url": null,
+      "arxiv_url": "https://arxiv.org/abs/2402.10329v3",
+      "categories": [
+        "cs.RO"
+      ]
+    },
+    "github": {
+      "repo_url": "https://github.com/real-stanford/universal_manipulation_interface",
+      "stars": 1065,
+      "forks": 201,
+      "last_commit": "2025-07-21T02:19:27Z",
+      "open_prs": 1,
+      "open_issues": 63,
+      "watchers": 1065
+    },
+    "twitter": {
+      "tweet_url": "https://x.com/chichengcc/status/1758539728444629158",
+      "tweet_id": "1758539728444629158",
+      "likes": 1788,
+      "retweets": 370,
+      "replies": 41,
+      "quotes": 124,
+      "views": 432141
+    },
+    "semantic_scholar": {
+      "paper_id": "40beef770a0f6b8cb2aa90587988b61080c40ba9",
+      "citation_count": 342,
+      "influential_citation_count": 39
+    },
+    "domains": [
+      "data_collection"
+    ],
+    "tags": [
+      "manipulation",
+      "dataset",
+      "UMI"
+    ],
+    "added_date": "2025-11-13T11:21:12.423981"
+  },
+  {
+    "arxiv": {
+      "arxiv_id": "2406.09246v3",
+      "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+      "authors": [
+        "Moo Jin Kim",
+        "Karl Pertsch",
+        "Siddharth Karamcheti",
+        "Ted Xiao",
+        "Ashwin Balakrishna",
+        "Suraj Nair",
+        "Rafael Rafailov",
+        "Ethan Foster",
+        "Grace Lam",
+        "Pannag Sanketi",
+        "Quan Vuong",
+        "Thomas Kollar",
+        "Benjamin Burchfiel",
+        "Russ Tedrake",
+        "Dorsa Sadigh",
+        "Sergey Levine",
+        "Percy Liang",
+        "Chelsea Finn"
+      ],
+      "summary": "Large policies pretrained on a combination of Internet-scale vision-language data and diverse robot demonstrations have the potential to change how we teach robots new skills: rather than training new behaviors from scratch, we can fine-tune such vision-language-action (VLA) models to obtain robust, generalizable policies for visuomotor control. Yet, widespread adoption of VLAs for robotics has been challenging as 1) existing VLAs are largely closed and inaccessible to the public, and 2) prior work fails to explore methods for efficiently fine-tuning VLAs for new tasks, a key component for adoption. Addressing these challenges, we introduce OpenVLA, a 7B-parameter open-source VLA trained on a diverse collection of 970k real-world robot demonstrations. OpenVLA builds on a Llama 2 language model combined with a visual encoder that fuses pretrained features from DINOv2 and SigLIP. As a product of the added data diversity and new model components, OpenVLA demonstrates strong results for generalist manipulation, outperforming closed models such as RT-2-X (55B) by 16.5% in absolute task success rate across 29 tasks and multiple robot embodiments, with 7x fewer parameters. We further show that we can effectively fine-tune OpenVLA for new settings, with especially strong generalization results in multi-task environments involving multiple objects and strong language grounding abilities, and outperform expressive from-scratch imitation learning methods such as Diffusion Policy by 20.4%. We also explore compute efficiency; as a separate contribution, we show that OpenVLA can be fine-tuned on consumer GPUs via modern low-rank adaptation methods and served efficiently via quantization without a hit to downstream success rate. Finally, we release model checkpoints, fine-tuning notebooks, and our PyTorch codebase with built-in support for training VLAs at scale on Open X-Embodiment datasets.",
+      "published_date": "2024-06-13",
+      "pdf_url": null,
+      "arxiv_url": "https://arxiv.org/abs/2406.09246v3",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ]
+    },
+    "github": {
+      "repo_url": "https://github.com/openvla/openvla",
+      "stars": 4410,
+      "forks": 527,
+      "last_commit": "2025-03-23T23:41:01Z",
+      "open_prs": 7,
+      "open_issues": 91,
+      "watchers": 4410
+    },
+    "twitter": {
+      "tweet_url": "https://x.com/moo_jin_kim/status/1801548441102991771",
+      "tweet_id": "1801548441102991771",
+      "likes": 695,
+      "retweets": 162,
+      "replies": 32,
+      "quotes": null,
+      "views": 226123
+    },
+    "semantic_scholar": {
+      "paper_id": "8f9ceb5ffad8e7a066dfc9d9aaa5153b714740ee",
+      "citation_count": 1102,
+      "influential_citation_count": 191
+    },
+    "domains": [
+      "vla"
+    ],
+    "tags": [
+      "VLA",
+      "vision-language-action",
+      "manipulation"
+    ],
+    "added_date": "2025-11-13T11:21:21.826533"
+  },
+  {
+    "arxiv": {
+      "arxiv_id": "2504.13165v1",
+      "title": "RUKA: Rethinking the Design of Humanoid Hands with Learning",
+      "authors": [
+        "Anya Zorin",
+        "Irmak Guzey",
+        "Billy Yan",
+        "Aadhithya Iyer",
+        "Lisa Kondrich",
+        "Nikhil X. Bhattasali",
+        "Lerrel Pinto"
+      ],
+      "summary": "Dexterous manipulation is a fundamental capability for robotic systems, yet progress has been limited by hardware trade-offs between precision, compactness, strength, and affordability. Existing control methods impose compromises on hand designs and applications. However, learning-based approaches present opportunities to rethink these trade-offs, particularly to address challenges with tendon-driven actuation and low-cost materials. This work presents RUKA, a tendon-driven humanoid hand that is compact, affordable, and capable. Made from 3D-printed parts and off-the-shelf components, RUKA has 5 fingers with 15 underactuated degrees of freedom enabling diverse human-like grasps. Its tendon-driven actuation allows powerful grasping in a compact, human-sized form factor. To address control challenges, we learn joint-to-actuator and fingertip-to-actuator models from motion-capture data collected by the MANUS glove, leveraging the hand's morphological accuracy. Extensive evaluations demonstrate RUKA's superior reachability, durability, and strength compared to other robotic hands. Teleoperation tasks further showcase RUKA's dexterous movements. The open-source design and assembly instructions of RUKA, code, and data are available at https://ruka-hand.github.io/.",
+      "published_date": "2025-04-17",
+      "pdf_url": null,
+      "arxiv_url": "https://arxiv.org/abs/2504.13165v1",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ]
+    },
+    "github": {
+      "repo_url": "https://github.com/ruka-hand/RUKA",
+      "stars": 153,
+      "forks": 20,
+      "last_commit": "2025-08-11T20:18:48Z",
+      "open_prs": 1,
+      "open_issues": 3,
+      "watchers": 153
+    },
+    "twitter": {
+      "tweet_url": "https://x.com/irmakkguzey/status/1913276064287305730",
+      "tweet_id": "1913276064287305730",
+      "likes": 445,
+      "retweets": 100,
+      "replies": 17,
+      "quotes": null,
+      "views": 109330
+    },
+    "semantic_scholar": {
+      "paper_id": "dd9e6a02ba61cb4839a22c6f53eb867f95828ef8",
+      "citation_count": 4,
+      "influential_citation_count": 0
+    },
+    "domains": [
+      "manipulation"
+    ],
+    "tags": [
+      "manipulation",
+      "hand",
+      "dexterous"
+    ],
+    "added_date": "2025-11-13T11:21:30.901175"
+  }
+]
