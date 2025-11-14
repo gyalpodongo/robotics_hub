@@ -1,78 +1,27 @@
-# Vision-Language-Action (VLA) Models
+# Foundation Models & VLAs
 
-Vision-Language-Action (VLA) models represent a paradigm shift in robot learning, combining visual perception, natural language understanding, and action generation in a single end-to-end model.
+Vision-Language-Action models and foundation models for robotics. These models combine vision, language, and action to enable versatile robotic manipulation and decision-making.
 
-## What are VLA Models?
+**Total Papers**: 10
 
-VLAs are neural networks that take visual observations and language instructions as input and directly output low-level robot actions. They leverage large-scale vision-language pretraining (like CLIP, PaLI) to achieve strong generalization to new tasks and environments.
+---
 
-## Architecture
+## Papers
 
-VLAs typically consist of:
-- **Vision Encoder**: Processes camera images (e.g., DINOv2, SigLIP, ViT)
-- **Language Encoder**: Processes natural language instructions (e.g., T5, LLaMA)
-- **Action Decoder**: Generates robot actions (end-effector poses, joint angles, gripper commands)
-
-## Key Advantages
-
-- **Language Grounding**: Natural language provides semantic context and task specification
-- **Pretrained Representations**: Leverages internet-scale vision-language data
-- **Generalization**: Zero-shot or few-shot transfer to new tasks and objects
-- **Multimodal Reasoning**: Combines visual and linguistic information
-
-## Training Approaches
-
-- **Imitation Learning**: Learning from human demonstrations with language annotations
-- **Fine-tuning**: Adapting pretrained VLMs to robot control
-- **LoRA/Adapter Methods**: Efficient fine-tuning with low-rank adaptations
-- **Multi-task Training**: Joint training across diverse tasks and embodiments
-
-## Challenges
-
-- **Compute Requirements**: Large models require significant GPU resources
-- **Data Collection**: Need paired vision-language-action demonstrations
-- **Real-time Inference**: Latency constraints for robot control
-- **Safety**: Ensuring language instructions don't lead to unsafe behaviors
-
-## Notable Models
-
-- **RT-2**: Vision-language-action model from Google DeepMind
-- **OpenVLA**: Open-source 7B parameter VLA model
-- **PaLM-E**: Embodied multimodal language model
-- **GR-1**: Generalist robot agent
+| Paper | arXiv | Date | GitHub | Stars | Citations | Twitter | Summary |
+|-------|-------|------|--------|-------|-----------|---------|----------|
+| [Open X-Embodiment: Robotic Learning...](https://arxiv.org/abs/2310.08864)<br>_Open X-Embodiment Collaboration, Abby O'Neill et al._ | 2310.08864 | 2023-10-13 | - | - | - | [❤️ 1,173 🔄 302](https://x.com/GoogleDeepMind/status/1709207886943965648)<br>👁️ 518,773 | Large, high-capacity models trained on diverse datasets have shown remarkable successes on effici... |
+| [GR00T N1: An Open Foundation Model ...](https://arxiv.org/abs/2503.14734)<br>_ NVIDIA,  : et al._ | 2503.14734 | 2025-03-18 | - | - | - | [❤️ 1,945 🔄 398](https://x.com/DrJimFan/status/1902117478496616642)<br>👁️ 450,145 | General-purpose robots need a versatile body and an intelligent mind. |
+| [OpenVLA: An Open-Source Vision-Lang...](https://arxiv.org/abs/2406.09246)<br>_Moo Jin Kim, Karl Pertsch et al._ | 2406.09246 | 2024-06-13 | [repo](https://github.com/openvla/openvla) | 4,415 | - | [❤️ 695 🔄 162](https://x.com/moo_jin_kim/status/1801548441102991771)<br>👁️ 226,126 | Large policies pretrained on a combination of Internet-scale vision-language data and diverse rob... |
+| [RT-2: Vision-Language-Action Models...](https://arxiv.org/abs/2307.15818)<br>_Anthony Brohan, Noah Brown et al._ | 2307.15818 | 2023-07-28 | [repo](https://github.com/kyegomez/RT-2) | 528 | - | [❤️ 1,590 🔄 435](https://x.com/GoogleDeepMind/status/1684903412834447360)<br>👁️ 537,063 | We study how vision-language models trained on Internet-scale data can be incorporated directly i... |
+| [CogACT: A Foundational Vision-Langu...](https://arxiv.org/abs/2411.19650)<br>_Qixiu Li, Yaobo Liang et al._ | 2411.19650 | 2024-11-29 | [repo](https://github.com/microsoft/CogACT) | 374 | - | - | The advancement of large Vision-Language-Action (VLA) models has significantly improved robotic m... |
+| [Unleashing Large-Scale Video Genera...](https://arxiv.org/abs/2312.13139)<br>_Hongtao Wu, Ya Jing et al._ | 2312.13139 | 2023-12-20 | [repo](https://github.com/bytedance/GR-1) | 286 | - | - | Generative pre-trained models have demonstrated remarkable effectiveness in language and vision d... |
+| [PaLM-E: An Embodied Multimodal Lang...](https://arxiv.org/abs/2303.03378)<br>_Danny Driess, Fei Xia et al._ | 2303.03378 | 2023-03-06 | [repo](https://github.com/kyegomez/PALM-E) | 329 | - | [❤️ 694 🔄 210](https://x.com/GoogleAI/status/1634252301303947272)<br>👁️ 173,053 | Large language models excel at a wide range of complex tasks. |
+| [An Embodied Generalist Agent in 3D ...](https://arxiv.org/abs/2311.12871)<br>_Jiangyong Huang, Silong Yong et al._ | 2311.12871 | 2023-11-18 | [repo](https://github.com/embodied-generalist/embodied-generalist) | 465 | - | [❤️ 199 🔄 34](https://x.com/jeasinema/status/1727595460867862930)<br>👁️ 81,872 | Leveraging massive knowledge from large language models (LLMs), recent machine learning models sh... |
+| [VIMA: General Robot Manipulation wi...](https://arxiv.org/abs/2210.03094)<br>_Yunfan Jiang, Agrim Gupta et al._ | 2210.03094 | 2022-10-06 | [repo](https://github.com/vimalabs/VIMA) | 835 | - | [❤️ 856 🔄 147](https://x.com/DrJimFan/status/1578433493561769984) | Prompt-based learning has emerged as a successful paradigm in natural language processing, where ... |
+| [AHA: A Vision-Language-Model for De...](https://arxiv.org/abs/2410.00371)<br>_Jiafei Duan, Wilbert Pumacay et al._ | 2410.00371 | 2024-10-01 | [repo](https://github.com/NVlabs/AHA) | 49 | - | [❤️ 201 🔄 43](https://x.com/DJiafei/status/1838562171460161619)<br>👁️ 48,462 | Robotic manipulation in open-world settings requires not only task execution but also the ability... |
 
 
 ---
 
-## 🔥 Latest Trends & Research Directions
-
-*Last Updated: 2025-11-13 13:21 UTC*
-
-### VLA Models: Trends Report
-
-1.  **Emerging Techniques**:
-    The establishment of **fully open-source foundation models for robotics**, epitomized by OpenVLA, has solidified as the dominant emerging technique. This goes beyond mere model release, encompassing comprehensive training pipelines, evaluation frameworks, and critical architectural insights. Specifically, the adoption of **fused multi-modal vision encoders** (e.g., DINOv2 and SigLIP in OpenVLA) is gaining traction, demonstrating superior spatial reasoning and semantic understanding vital for robot control. Another key technical approach is **quantile-based action discretization**, which robustly handles outliers and maintains granularity across diverse action distributions, enhancing the LLM's ability to generate precise robot actions. The practice of **fine-tuning the vision encoder alongside the LLM backbone** during VLA training, rather than freezing it, is also emerging as crucial for achieving state-of-the-art performance, highlighting the need for end-to-end learning within the VLA architecture.
-
-2.  **Key Innovations**:
-    The central innovation is the achievement of **unprecedented parameter efficiency and performance**, where models like OpenVLA (7B parameters) now significantly outperform much larger closed-source counterparts (55B parameters) on generalist manipulation tasks. This represents a breakthrough in making highly capable VLAs more accessible. Complementing this is the innovation in **practical deployment accessibility** through robust parameter-efficient fine-tuning (PEFT) methods like LoRA, which drastically reduce computational demands for adaptation, and highly effective memory-efficient inference via 4-bit quantization, enabling deployment on consumer-grade GPUs without significant performance degradation. These innovations are democratizing the development and application of generalist robot policies, shifting from theoretical potential to widespread practical utility.
-
-3.  **Research Directions**:
-    The field is now heavily focused on **optimizing and extending existing open-source VLA models**, with a strong emphasis on **efficient and effective domain adaptation**. This includes exploring advanced PEFT strategies that allow for rapid skill acquisition with minimal data on novel robot embodiments. Research is also directed towards **refining vision encoder architectures and training methodologies** specifically for VLA contexts, moving beyond simple feature extraction to deeply integrated visual reasoning. Furthermore, there is intensified effort on **rigorous, multi-axis benchmarking of generalization capabilities**—across visual, motion, physical, semantic, and language domains—using shared platforms and datasets like Open X-Embodiment to establish clearer performance ceilings and identify remaining limitations.
-
-4.  **Open Challenges**:
-    Despite advancements in leveraging large datasets, the **scarcity and diversity of publicly available, high-quality real-world robot demonstration datasets** remain a significant bottleneck for further scaling and improving VLA models. Achieving **truly robust generalization in highly unstructured, novel, and dynamic real-world environments**, particularly concerning safety and reliability in safety-critical applications, continues to be a major hurdle. While compute efficiency for deployment has improved, the **computational demands for training from scratch and extensive experimentation** on these models still pose a challenge for smaller research groups. Moreover, ensuring **real-time, low-latency performance with highly quantized models under non-blocking control** needs further investigation to overcome potential performance regressions observed in high-frequency robot control.
-
-5.  **Promising Areas for Exploration**:
-    Promising avenues include **community-driven data collection initiatives** that build upon the open-source VLA paradigm, potentially leveraging federated learning or crowdsourcing to expand dataset scale and diversity for models like OpenVLA. Further research into **hybrid vision encoder designs** that combine different pre-training strategies or architectures could yield even more powerful visual representations for robotics. Exploration into **novel PEFT methods** that can adapt more components of the VLA, including the vision encoder, with similar efficiency to LoRA for LLMs. Investigating **adaptive quantization and real-time inference optimization** techniques to bridge the gap between memory efficiency and consistent high-frequency, non-blocking robot control. Finally, continued focus on **standardized, comprehensive evaluation protocols** that better capture the open-ended generalization and real-world robustness of these generalist agents is crucial.
-
----
-
-## 📄 Papers in This Domain
-
-| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
-|-------|-----|------|---------|--------|-----------|--------|---------|----------|
-| [OpenVLA: An Open-Source Vision-Language-Ac...](../papers/2406.09246.md) | [2406.09246](https://arxiv.org/abs/2406.09246v3) | Jun 13, 2024 | Kim et al. | ⭐[4.4k](https://github.com/openvla/openvla)<br>🔀[527](https://github.com/openvla/openvla) | [1.1k](https://www.semanticscholar.org/paper/8f9ceb5ffad8e7a066dfc9d9aaa5153b714740ee)<br>📈191 | 91 | [Jun 13, 2024](../papers/2406.09246.md) | ❤️[695](https://x.com/moo_jin_kim/status/1801548441102991771) 🔁[162](https://x.com/moo_jin_kim/status/1801548441102991771)<br>👁️[226.1k](https://x.com/moo_jin_kim/status/1801548441102991771) |
-
----
-
-*This page is automatically updated daily with the latest research trends and papers.*
+_Last updated: 2025-11-13_

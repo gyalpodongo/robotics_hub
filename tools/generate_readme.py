@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from datetime import datetime
+from scoring import score_paper
 
 
 def format_number(num):
@@ -168,6 +169,9 @@ def generate_domain_section(papers, domain_name):
     if not domain_papers:
         return ""
 
+    papers_with_scores = [(p, score_paper(p)) for p in domain_papers]
+    papers_with_scores.sort(key=lambda x: x[1], reverse=True)
+
     domain_info = DOMAIN_INFO.get(domain_name, {"title": domain_name.replace('_', ' ').title(), "link": None})
 
     if domain_info.get("link"):
@@ -178,7 +182,7 @@ def generate_domain_section(papers, domain_name):
     section += "| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |\n"
     section += "|-------|-----|------|---------|--------|-----------|--------|---------------|----------|\n"
 
-    for paper in domain_papers:
+    for paper, score in papers_with_scores:
         section += generate_paper_row(paper) + "\n"
 
     section += "\n"
