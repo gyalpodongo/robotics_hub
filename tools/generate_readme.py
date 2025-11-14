@@ -11,14 +11,12 @@ def format_number(num):
     return str(num)
 
 
-def format_date(date_str, compact=False):
+def format_date(date_str):
     from datetime import datetime
     if not date_str:
         return "—"
     try:
         date_obj = datetime.strptime(date_str, "%Y-%m-%d")
-        if compact:
-            return date_obj.strftime("%b '%y")
         return date_obj.strftime("%b %d, %Y")
     except:
         return date_str
@@ -57,7 +55,7 @@ def generate_paper_row(paper):
         repo_url = github["repo_url"]
         stars = format_number(github.get("stars"))
         forks = format_number(github.get("forks"))
-        github_str = f"⭐[{stars}]({repo_url}) 🔀[{forks}]({repo_url})"
+        github_str = f"⭐[{stars}]({repo_url})<br>🔀[{forks}]({repo_url})"
 
     citation_str = "—"
     if semantic.get("citation_count") is not None:
@@ -67,7 +65,7 @@ def generate_paper_row(paper):
         if semantic.get("paper_id"):
             s2_url = f"https://www.semanticscholar.org/paper/{semantic['paper_id']}"
             if influential and influential > 0:
-                citation_str = f"[{citations}]({s2_url}) ({influential}📈)"
+                citation_str = f"[{citations}]({s2_url}) (📈{influential})"
             else:
                 citation_str = f"[{citations}]({s2_url})"
         else:
@@ -76,25 +74,24 @@ def generate_paper_row(paper):
     twitter_str = "—"
     tweet_url = twitter.get("tweet_url")
     if tweet_url and (twitter.get("likes") or twitter.get("retweets") or twitter.get("views")):
-        parts = []
-        if twitter.get("likes"):
-            parts.append(f"❤️[{format_number(twitter['likes'])}]({tweet_url})")
-        if twitter.get("retweets"):
-            parts.append(f"🔁[{format_number(twitter['retweets'])}]({tweet_url})")
-        if twitter.get("views"):
-            parts.append(f"👁️[{format_number(twitter['views'])}]({tweet_url})")
+        likes = f"❤️[{format_number(twitter['likes'])}]({tweet_url})" if twitter.get("likes") else ""
+        retweets = f"🔁[{format_number(twitter['retweets'])}]({tweet_url})" if twitter.get("retweets") else ""
+        views = f"👁️[{format_number(twitter['views'])}]({tweet_url})" if twitter.get("views") else ""
 
-        twitter_str = "<br>".join(parts) if parts else "—"
+        line1 = " ".join(filter(None, [likes, retweets]))
+        line2 = views
+        twitter_str = f"{line1}<br>{line2}" if line2 else line1
 
     date = format_date(arxiv.get("published_date", ""))
-    date_compact = format_date(arxiv.get("published_date", ""), compact=True)
     authors_short = arxiv["authors"][0].split()[-1] + " et al." if arxiv["authors"] else "—"
 
-    arxiv_link = f"[{arxiv_id}]({arxiv['arxiv_url']})"
+    arxiv_link = f"[Link]({arxiv['arxiv_url']})"
 
     open_issues = github.get("open_issues", "—")
 
-    return f"| [{title}]({paper_md}) | {arxiv_link} | {date} | {authors_short} | {github_str} | {citation_str} | {open_issues} | {date_compact} | {twitter_str} |"
+    latest_changes = f"[{date}]({paper_md})"
+
+    return f"| [{title}]({paper_md}) | {arxiv_link} | {date} | {authors_short} | {github_str} | {citation_str} | {open_issues} | {latest_changes} | {twitter_str} |"
 
 
 DOMAIN_INFO = {
@@ -126,8 +123,8 @@ def generate_domain_section(papers, domain_name):
     else:
         section = f"### {domain_info['title']}\n\n"
 
-    section += "| Paper | Link | Date | Authors | GitHub | Citations | Issues | Last Change | Twitter |\n"
-    section += "|-------|------|------|---------|--------|-----------|--------|-------------|----------|\n"
+    section += "| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |\n"
+    section += "|-------|-----|------|---------|--------|-----------|--------|---------|----------|\n"
 
     for paper in domain_papers:
         section += generate_paper_row(paper) + "\n"
