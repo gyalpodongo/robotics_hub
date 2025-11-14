@@ -1,4 +1,4 @@
-# 🤖 AIR Intelligence Hub
+# 🤖 Robotics Intelligence Hub
 
 > A curated collection of cutting-edge robotics research papers with real-world engagement metrics
 
