@@ -24,19 +24,19 @@ This repository serves two purposes:
 
 ## 📑 Papers by Domain
 
-### [Data Collection & Datasets](domains/data_collection.md)
-
-| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |
-|-------|-----|------|---------|--------|-----------|--------|---------------|----------|
-| [Universal Manipulation Interface...](papers/2402.10329.md) | [Link](https://arxiv.org/abs/2402.10329v3) | Feb 15, 2024 | Chi et al. | ⭐[1.1k](https://github.com/real-stanford/universal_manipulation_interface)<br>🔀[201](https://github.com/real-stanford/universal_manipulation_interface) | [342](https://www.semanticscholar.org/paper/40beef770a0f6b8cb2aa90587988b61080c40ba9)<br>📈39 | 63 | [Jul 22, 2025](papers/2402.10329.md) | ❤️[1.8k](https://x.com/chichengcc/status/1758539728444629158) 🔁[370](https://x.com/chichengcc/status/1758539728444629158)<br>👁️[432.1k](https://x.com/chichengcc/status/1758539728444629158) |
-
-### [Vision-Language-Action Models](domains/vla.md)
+### [Foundation Models & VLAs](domains/vla.md)
 
 | Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |
 |-------|-----|------|---------|--------|-----------|--------|---------------|----------|
 | [OpenVLA: An Open-Source Vision-L...](papers/2406.09246.md) | [Link](https://arxiv.org/abs/2406.09246v3) | Jun 13, 2024 | Kim et al. | ⭐[4.4k](https://github.com/openvla/openvla)<br>🔀[527](https://github.com/openvla/openvla) | [1.1k](https://www.semanticscholar.org/paper/8f9ceb5ffad8e7a066dfc9d9aaa5153b714740ee)<br>📈191 | 91 | [Nov 09, 2025](papers/2406.09246.md) | ❤️[695](https://x.com/moo_jin_kim/status/1801548441102991771) 🔁[162](https://x.com/moo_jin_kim/status/1801548441102991771)<br>👁️[226.1k](https://x.com/moo_jin_kim/status/1801548441102991771) |
 
-### [Robot Manipulation](domains/manipulation.md)
+### [Data Collection & Teleoperation](domains/data_collection.md)
+
+| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |
+|-------|-----|------|---------|--------|-----------|--------|---------------|----------|
+| [Universal Manipulation Interface...](papers/2402.10329.md) | [Link](https://arxiv.org/abs/2402.10329v3) | Feb 15, 2024 | Chi et al. | ⭐[1.1k](https://github.com/real-stanford/universal_manipulation_interface)<br>🔀[201](https://github.com/real-stanford/universal_manipulation_interface) | [342](https://www.semanticscholar.org/paper/40beef770a0f6b8cb2aa90587988b61080c40ba9)<br>📈39 | 63 | [Jul 22, 2025](papers/2402.10329.md) | ❤️[1.8k](https://x.com/chichengcc/status/1758539728444629158) 🔁[370](https://x.com/chichengcc/status/1758539728444629158)<br>👁️[432.1k](https://x.com/chichengcc/status/1758539728444629158) |
+
+### [Manipulation & Grasping](domains/manipulation.md)
 
 | Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |
 |-------|-----|------|---------|--------|-----------|--------|---------------|----------|
@@ -86,6 +86,6 @@ If you find this repository useful, please consider citing:
 
 ---
 
-**Last Updated:** 2025-11-13 19:41:21 UTC
+**Last Updated:** 2025-11-13 19:52:07 UTC
 
 **Maintained by:** Gyalpo Dongo

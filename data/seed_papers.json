@@ -17,7 +17,231 @@
     "arxiv_url": "https://arxiv.org/abs/2504.13165",
     "twitter_url": "https://x.com/irmakkguzey/status/1913276064287305730",
     "github_url": "https://github.com/ruka-hand/RUKA",
-    "domains": ["manipulation"],
+    "domains": ["dexterous", "manipulation"],
     "tags": ["manipulation", "hand", "dexterous"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2307.15818",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["vla"],
+    "tags": ["VLA", "vision-language-action", "Google"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2310.08864",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["datasets", "vla"],
+    "tags": ["dataset", "open-x-embodiment", "benchmark"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2210.03094",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["vla"],
+    "tags": ["VLA", "multimodal", "prompts"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2311.12871",
+    "twitter_url": null,
+    "github_url": "https://github.com/embodied-generalist/embodied-generalist",
+    "domains": ["vla"],
+    "tags": ["VLA", "3D", "simulation"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2503.14734",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["vla"],
+    "tags": ["VLA", "humanoid", "NVIDIA"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2403.03954",
+    "twitter_url": null,
+    "github_url": "https://github.com/YanjieZe/3D-Diffusion-Policy",
+    "domains": ["policy_methods"],
+    "tags": ["diffusion", "3D", "policy"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2407.01479",
+    "twitter_url": null,
+    "github_url": "https://github.com/yjy0625/equibot",
+    "domains": ["policy_methods"],
+    "tags": ["diffusion", "equivariance", "policy"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2407.01531",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["policy_methods"],
+    "tags": ["diffusion", "policy", "sparse"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2305.13301",
+    "twitter_url": null,
+    "github_url": "https://github.com/jannerm/ddpo",
+    "domains": ["policy_methods", "rl"],
+    "tags": ["diffusion", "RL", "policy"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2310.12931",
+    "twitter_url": null,
+    "github_url": "https://github.com/eureka-research/Eureka",
+    "domains": ["rl"],
+    "tags": ["RL", "LLM", "reward", "NVIDIA"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2305.16291",
+    "twitter_url": null,
+    "github_url": "https://github.com/MineDojo/Voyager",
+    "domains": ["rl"],
+    "tags": ["RL", "LLM", "Minecraft", "NVIDIA"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2509.08827",
+    "twitter_url": null,
+    "github_url": "https://github.com/TsinghuaC3I/Awesome-RL-for-LRMs",
+    "domains": ["rl"],
+    "tags": ["RL", "LLM", "survey"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2505.21864",
+    "twitter_url": null,
+    "github_url": "https://github.com/real-stanford/DexUMI",
+    "domains": ["dexterous", "data_collection"],
+    "tags": ["dexterous", "teleoperation", "hand"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2508.00097",
+    "twitter_url": null,
+    "github_url": "https://github.com/XR-Robotics",
+    "domains": ["data_collection"],
+    "tags": ["teleoperation", "VR", "XR"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2503.07771",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["data_collection"],
+    "tags": ["teleoperation", "interactive-learning"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2403.12945",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["datasets"],
+    "tags": ["dataset", "DROID", "in-the-wild"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2306.03310",
+    "twitter_url": null,
+    "github_url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "domains": ["datasets"],
+    "tags": ["benchmark", "lifelong-learning"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2504.03597",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["sim_to_real"],
+    "tags": ["sim-to-real", "digital-twin", "gaussian-splatting"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2304.08488",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["sim_to_real"],
+    "tags": ["sim-to-real", "affordances", "human-videos"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2311.01455",
+    "twitter_url": null,
+    "github_url": "https://github.com/robogen-ai/robogen",
+    "domains": ["sim_to_real"],
+    "tags": ["sim-to-real", "procedural-generation"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2406.16862",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["sim_to_real"],
+    "tags": ["sim-to-real", "video-generation", "diffusion"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2210.03173",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["manipulation", "dexterous"],
+    "tags": ["grasping", "6-DoF", "collaboration"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2410.09309",
+    "twitter_url": null,
+    "github_url": "https://github.com/yifan-hou/adaptive_compliance_policy",
+    "domains": ["manipulation"],
+    "tags": ["compliance", "diffusion", "contact-rich"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2305.05658",
+    "twitter_url": null,
+    "github_url": "https://github.com/jimmyyhwu/tidybot",
+    "domains": ["mobile_manipulation", "hri_planning"],
+    "tags": ["mobile-manipulation", "LLM", "planning"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2310.07896",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["mobile_manipulation"],
+    "tags": ["navigation", "diffusion", "exploration"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2312.08344",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["perception"],
+    "tags": ["pose-estimation", "6D", "foundation-model", "NVIDIA"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2304.07193",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["perception"],
+    "tags": ["vision", "foundation-model", "DINOv2", "Meta"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2209.07753",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["hri_planning"],
+    "tags": ["LLM", "planning", "code-generation"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2209.11302",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["hri_planning"],
+    "tags": ["LLM", "planning", "prompting"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2306.06531",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["hri_planning"],
+    "tags": ["LLM", "TAMP", "planning"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2307.04738",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["hri_planning"],
+    "tags": ["LLM", "multi-robot", "collaboration"]
+  },
+  {
+    "arxiv_url": "https://arxiv.org/abs/2501.00785",
+    "twitter_url": null,
+    "github_url": null,
+    "domains": ["hri_planning"],
+    "tags": ["HRI", "multimodal", "LLM"]
   }
 ]

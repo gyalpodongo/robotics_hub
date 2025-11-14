@@ -115,17 +115,49 @@ def generate_paper_row(paper):
 
 
 DOMAIN_INFO = {
-    "data_collection": {
-        "title": "Data Collection & Datasets",
-        "link": "domains/data_collection.md"
-    },
     "vla": {
-        "title": "Vision-Language-Action Models",
+        "title": "Foundation Models & VLAs",
         "link": "domains/vla.md"
     },
+    "policy_methods": {
+        "title": "Policy Learning Methods",
+        "link": "domains/policy_methods.md"
+    },
+    "rl": {
+        "title": "Reinforcement Learning",
+        "link": "domains/rl.md"
+    },
+    "data_collection": {
+        "title": "Data Collection & Teleoperation",
+        "link": "domains/data_collection.md"
+    },
+    "datasets": {
+        "title": "Datasets & Benchmarks",
+        "link": "domains/datasets.md"
+    },
+    "sim_to_real": {
+        "title": "Sim-to-Real & Transfer",
+        "link": "domains/sim_to_real.md"
+    },
     "manipulation": {
-        "title": "Robot Manipulation",
+        "title": "Manipulation & Grasping",
         "link": "domains/manipulation.md"
+    },
+    "dexterous": {
+        "title": "Dexterous Manipulation",
+        "link": "domains/dexterous.md"
+    },
+    "mobile_manipulation": {
+        "title": "Mobile Manipulation & Navigation",
+        "link": "domains/mobile_manipulation.md"
+    },
+    "perception": {
+        "title": "Perception & Scene Understanding",
+        "link": "domains/perception.md"
+    },
+    "hri_planning": {
+        "title": "HRI & Planning",
+        "link": "domains/hri_planning.md"
     }
 }
 
@@ -193,7 +225,7 @@ This repository serves two purposes:
 
 """
 
-    domains = ["data_collection", "vla", "simulation", "diffusion", "manipulation", "locomotion"]
+    domains = ["vla", "policy_methods", "rl", "data_collection", "datasets", "sim_to_real", "manipulation", "dexterous", "mobile_manipulation", "perception", "hri_planning"]
 
     for domain in domains:
         section = generate_domain_section(papers, domain)
