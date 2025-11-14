@@ -65,7 +65,7 @@ def generate_paper_row(paper):
         if semantic.get("paper_id"):
             s2_url = f"https://www.semanticscholar.org/paper/{semantic['paper_id']}"
             if influential and influential > 0:
-                citation_str = f"[{citations}]({s2_url}) (📈{influential})"
+                citation_str = f"[{citations}]({s2_url})<br>📈{influential}"
             else:
                 citation_str = f"[{citations}]({s2_url})"
         else:
@@ -89,9 +89,16 @@ def generate_paper_row(paper):
 
     open_issues = github.get("open_issues", "—")
 
-    latest_changes = f"[{date}]({paper_md})"
+    latest_change = "—"
+    if github.get("last_commit"):
+        try:
+            from datetime import datetime
+            commit_date = datetime.strptime(github["last_commit"], "%Y-%m-%dT%H:%M:%SZ")
+            latest_change = f"[{commit_date.strftime('%b %d, %Y')}]({paper_md})"
+        except:
+            latest_change = "—"
 
-    return f"| [{title}]({paper_md}) | {arxiv_link} | {date} | {authors_short} | {github_str} | {citation_str} | {open_issues} | {latest_changes} | {twitter_str} |"
+    return f"| [{title}]({paper_md}) | {arxiv_link} | {date} | {authors_short} | {github_str} | {citation_str} | {open_issues} | {latest_change} | {twitter_str} |"
 
 
 DOMAIN_INFO = {
@@ -123,8 +130,8 @@ def generate_domain_section(papers, domain_name):
     else:
         section = f"### {domain_info['title']}\n\n"
 
-    section += "| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |\n"
-    section += "|-------|-----|------|---------|--------|-----------|--------|---------|----------|\n"
+    section += "| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |\n"
+    section += "|-------|-----|------|---------|--------|-----------|--------|---------------|----------|\n"
 
     for paper in domain_papers:
         section += generate_paper_row(paper) + "\n"
