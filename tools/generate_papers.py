@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from datetime import datetime
 from scoring import score_paper
 
 def generate_paper_markdown(paper: dict) -> str:

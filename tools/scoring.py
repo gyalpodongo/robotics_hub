@@ -6,23 +6,11 @@ def calculate_relevance_score(
     github_stars: Optional[int],
     twitter_views: Optional[int],
     published_date: str,
-    recency_weight: float = 0.25,
-    citation_weight: float = 0.35,
-    github_weight: float = 0.25,
-    twitter_weight: float = 0.15
+    recency_weight: float = 0.40,
+    citation_weight: float = 0.30,
+    github_weight: float = 0.20,
+    twitter_weight: float = 0.10
 ) -> float:
-    """
-    Calculate a relevance score for a paper based on multiple metrics.
-
-    The score considers:
-    - Citations (35%): Academic impact
-    - GitHub stars (25%): Community engagement and code quality
-    - Recency (25%): How recent the paper is
-    - Twitter views (15%): Social media engagement
-
-    Papers with missing metrics get partial scores (not penalized completely).
-    """
-
     score = 0.0
     available_weights = 0.0
 
@@ -41,26 +29,25 @@ def calculate_relevance_score(
         score += twitter_score * twitter_weight
         available_weights += twitter_weight
 
-    try:
-        pub_date = datetime.strptime(published_date, "%Y-%m-%d")
-        now = datetime.now()
-        days_old = (now - pub_date).days
+    pub_date = datetime.strptime(published_date, "%Y-%m-%d")
+    now = datetime.now()
+    days_old = (now - pub_date).days
 
-        if days_old < 0:
-            recency_score = 1.0
-        elif days_old < 180:
-            recency_score = 1.0
-        elif days_old < 365:
-            recency_score = 0.9
-        elif days_old < 730:
-            recency_score = 0.7
-        else:
-            recency_score = max(0.3, 1.0 - (days_old - 730) / 730)
+    if days_old < 0:
+        recency_score = 1.0
+    elif days_old < 90:
+        recency_score = 1.0
+    elif days_old < 180:
+        recency_score = 0.95
+    elif days_old < 365:
+        recency_score = 0.85
+    elif days_old < 730:
+        recency_score = 0.65
+    else:
+        recency_score = max(0.2, 0.65 - (days_old - 730) / 1460)
 
-        score += recency_score * recency_weight
-        available_weights += recency_weight
-    except:
-        pass
+    score += recency_score * recency_weight
+    available_weights += recency_weight
 
     if available_weights > 0:
         normalized_score = score / available_weights
@@ -69,10 +56,7 @@ def calculate_relevance_score(
 
     return normalized_score * 100
 
-
 def score_paper(paper_dict: dict) -> float:
-    """Calculate relevance score for a paper dictionary."""
-
     citations = paper_dict.get("semantic_scholar", {}).get("citation_count")
     github_stars = paper_dict.get("github", {}).get("stars")
     twitter_views = paper_dict.get("twitter", {}).get("views")
@@ -84,7 +68,6 @@ def score_paper(paper_dict: dict) -> float:
         twitter_views=twitter_views,
         published_date=published_date
     )
-
 
 if __name__ == "__main__":
     test_papers = [
