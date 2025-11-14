@@ -52,9 +52,9 @@
       "views": 226126
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "8f9ceb5ffad8e7a066dfc9d9aaa5153b714740ee",
+      "citation_count": 1102,
+      "influential_citation_count": 191
     },
     "domains": [
       "vla"
@@ -65,7 +65,7 @@
       "open-source",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898618"
+    "added_date": "2025-11-14T00:17:04.785634"
   },
   {
     "arxiv": {
@@ -158,9 +158,9 @@
       "views": 537063
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "38939304bb760473141c2aca0305e44fbe04e6e8",
+      "citation_count": 1865,
+      "influential_citation_count": 126
     },
     "domains": [
       "vla"
@@ -171,7 +171,7 @@
       "Google",
       "RT-2"
     ],
-    "added_date": "2025-11-13T23:41:11.898647"
+    "added_date": "2025-11-14T00:17:04.785696"
   },
   {
     "arxiv": {
@@ -515,7 +515,7 @@
       "benchmark",
       "Google"
     ],
-    "added_date": "2025-11-13T23:41:11.898655"
+    "added_date": "2025-11-14T00:17:04.785725"
   },
   {
     "arxiv": {
@@ -563,9 +563,9 @@
       "views": 0
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "25425e299101b13ec2872417a14f961f4f8aa18e",
+      "citation_count": 435,
+      "influential_citation_count": 41
     },
     "domains": [
       "vla"
@@ -576,7 +576,7 @@
       "prompts",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898662"
+    "added_date": "2025-11-14T00:17:04.785748"
   },
   {
     "arxiv": {
@@ -625,9 +625,9 @@
       "views": 81872
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "13d12b26db345f62e8e512db181b96a7f8763b47",
+      "citation_count": 252,
+      "influential_citation_count": 29
     },
     "domains": [
       "vla"
@@ -638,7 +638,7 @@
       "simulation",
       "embodied-agent"
     ],
-    "added_date": "2025-11-13T23:41:11.898668"
+    "added_date": "2025-11-14T00:17:04.785765"
   },
   {
     "arxiv": {
@@ -719,9 +719,9 @@
       "views": 450145
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "731c50b0d6af4c1cb8d95f506541681ea487973b",
+      "citation_count": 275,
+      "influential_citation_count": 43
     },
     "domains": [
       "vla"
@@ -732,7 +732,7 @@
       "NVIDIA",
       "foundation-model"
     ],
-    "added_date": "2025-11-13T23:41:11.898675"
+    "added_date": "2025-11-14T00:17:04.785786"
   },
   {
     "arxiv": {
@@ -778,9 +778,9 @@
       "views": 48462
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "076f35d58d26ac74c71e6e849dfffc0707aa8a6f",
+      "citation_count": 66,
+      "influential_citation_count": 4
     },
     "domains": [
       "vla"
@@ -790,7 +790,7 @@
       "failure-detection",
       "reasoning"
     ],
-    "added_date": "2025-11-13T23:41:11.898682"
+    "added_date": "2025-11-14T00:17:04.785802"
   },
   {
     "arxiv": {
@@ -861,7 +861,7 @@
       "action",
       "Microsoft"
     ],
-    "added_date": "2025-11-13T23:41:11.898690"
+    "added_date": "2025-11-14T00:17:04.785820"
   },
   {
     "arxiv": {
@@ -907,9 +907,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "4443c9a43bff8dcd717e5c75115ec6497af2b953",
+      "citation_count": 196,
+      "influential_citation_count": 17
     },
     "domains": [
       "vla"
@@ -919,7 +919,7 @@
       "video-generation",
       "ByteDance"
     ],
-    "added_date": "2025-11-13T23:41:11.898697"
+    "added_date": "2025-11-14T00:17:04.785835"
   },
   {
     "arxiv": {
@@ -979,9 +979,9 @@
       "views": 173053
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "38fe8f324d2162e63a967a9ac6648974fc4c66f3",
+      "citation_count": 2062,
+      "influential_citation_count": 99
     },
     "domains": [
       "vla"
@@ -991,7 +991,7 @@
       "embodied-LLM",
       "Google"
     ],
-    "added_date": "2025-11-13T23:41:11.898703"
+    "added_date": "2025-11-14T00:17:04.785851"
   },
   {
     "arxiv": {
@@ -1035,9 +1035,9 @@
       "views": 129017
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "bdba3bd30a49ea4c5b20b43dbd8f0eb59e9d80e2",
+      "citation_count": 1908,
+      "influential_citation_count": 464
     },
     "domains": [
       "policy_methods"
@@ -1048,7 +1048,7 @@
       "visuomotor",
       "imitation-learning"
     ],
-    "added_date": "2025-11-13T23:41:11.898710"
+    "added_date": "2025-11-14T00:17:04.785866"
   },
   {
     "arxiv": {
@@ -1092,9 +1092,9 @@
       "views": 96877
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "8bb32652e0a935b6ba1f54bd3d39cad80db09908",
+      "citation_count": 120,
+      "influential_citation_count": 19
     },
     "domains": [
       "policy_methods"
@@ -1105,7 +1105,7 @@
       "policy",
       "point-cloud"
     ],
-    "added_date": "2025-11-13T23:41:11.898716"
+    "added_date": "2025-11-14T00:17:04.785910"
   },
   {
     "arxiv": {
@@ -1160,7 +1160,7 @@
       "consistency",
       "real-time"
     ],
-    "added_date": "2025-11-13T23:41:11.898733"
+    "added_date": "2025-11-14T00:17:04.785924"
   },
   {
     "arxiv": {
@@ -1203,9 +1203,9 @@
       "views": 87804
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "80d29b985f148d700ef8781bdf3894dade8dc80a",
+      "citation_count": 63,
+      "influential_citation_count": 7
     },
     "domains": [
       "policy_methods"
@@ -1216,7 +1216,7 @@
       "policy",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898739"
+    "added_date": "2025-11-14T00:17:04.785940"
   },
   {
     "arxiv": {
@@ -1259,9 +1259,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "894319be72bc1ab371e7a6c939e400c837535ff5",
+      "citation_count": 25,
+      "influential_citation_count": 5
     },
     "domains": [
       "policy_methods"
@@ -1271,7 +1271,7 @@
       "policy",
       "action-chunking"
     ],
-    "added_date": "2025-11-13T23:41:11.898745"
+    "added_date": "2025-11-14T00:17:04.785954"
   },
   {
     "arxiv": {
@@ -1319,9 +1319,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "9ab4741a31e9338ebfb01451b8a02e864258c8c3",
+      "citation_count": 38,
+      "influential_citation_count": 3
     },
     "domains": [
       "policy_methods"
@@ -1332,7 +1332,7 @@
       "sparse",
       "reusable"
     ],
-    "added_date": "2025-11-13T23:41:11.898751"
+    "added_date": "2025-11-14T00:17:04.785969"
   },
   {
     "arxiv": {
@@ -1386,7 +1386,7 @@
       "3D",
       "scene-representation"
     ],
-    "added_date": "2025-11-13T23:41:11.898756"
+    "added_date": "2025-11-14T00:17:04.785984"
   },
   {
     "arxiv": {
@@ -1429,9 +1429,9 @@
       "views": 129377
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "d8c78221e4366d6a72a6b3e41e35b706cc45c01d",
+      "citation_count": 558,
+      "influential_citation_count": 114
     },
     "domains": [
       "policy_methods",
@@ -1443,7 +1443,7 @@
       "policy",
       "UC-Berkeley"
     ],
-    "added_date": "2025-11-13T23:41:11.898762"
+    "added_date": "2025-11-14T00:17:04.785998"
   },
   {
     "arxiv": {
@@ -1503,7 +1503,7 @@
       "PPO",
       "Princeton"
     ],
-    "added_date": "2025-11-13T23:41:11.898768"
+    "added_date": "2025-11-14T00:17:04.786027"
   },
   {
     "arxiv": {
@@ -1556,7 +1556,7 @@
       "multi-task",
       "3D"
     ],
-    "added_date": "2025-11-13T23:41:11.898772"
+    "added_date": "2025-11-14T00:17:04.786042"
   },
   {
     "arxiv": {
@@ -1616,7 +1616,7 @@
       "reward-design",
       "NVIDIA"
     ],
-    "added_date": "2025-11-13T23:41:11.898778"
+    "added_date": "2025-11-14T00:17:04.786057"
   },
   {
     "arxiv": {
@@ -1661,9 +1661,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "f197bf0fc2f228483f6af3285000d54d8d97f9eb",
+      "citation_count": 1083,
+      "influential_citation_count": 108
     },
     "domains": [
       "rl"
@@ -1675,7 +1675,7 @@
       "NVIDIA",
       "open-ended"
     ],
-    "added_date": "2025-11-13T23:41:11.898784"
+    "added_date": "2025-11-14T00:17:04.786071"
   },
   {
     "arxiv": {
@@ -1765,7 +1765,7 @@
       "survey",
       "Tsinghua"
     ],
-    "added_date": "2025-11-13T23:41:11.898791"
+    "added_date": "2025-11-14T00:17:04.786092"
   },
   {
     "arxiv": {
@@ -1822,7 +1822,7 @@
       "UMI",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898798"
+    "added_date": "2025-11-14T00:17:04.786108"
   },
   {
     "arxiv": {
@@ -1865,9 +1865,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "22550cdfb498e0890e75e504d8ab5dd5e0ca8729",
+      "citation_count": 10,
+      "influential_citation_count": 0
     },
     "domains": [
       "dexterous",
@@ -1879,7 +1879,7 @@
       "hand",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898805"
+    "added_date": "2025-11-14T00:17:04.786129"
   },
   {
     "arxiv": {
@@ -1920,9 +1920,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "f2b6c0a329270d3e90cfaa1604c6861ed563e67c",
+      "citation_count": 2,
+      "influential_citation_count": 1
     },
     "domains": [
       "data_collection"
@@ -1933,7 +1933,7 @@
       "XR",
       "ByteDance"
     ],
-    "added_date": "2025-11-13T23:41:11.898811"
+    "added_date": "2025-11-14T00:17:04.786145"
   },
   {
     "arxiv": {
@@ -1989,7 +1989,7 @@
       "interactive-learning",
       "RoboCopilot"
     ],
-    "added_date": "2025-11-13T23:41:11.898818"
+    "added_date": "2025-11-14T00:17:04.786167"
   },
   {
     "arxiv": {
@@ -2126,9 +2126,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "ee5070fe52fd17da9a89d3f342fb07cc9ae51afe",
+      "citation_count": 400,
+      "influential_citation_count": 32
     },
     "domains": [
       "datasets"
@@ -2139,7 +2139,7 @@
       "in-the-wild",
       "manipulation"
     ],
-    "added_date": "2025-11-13T23:41:11.898824"
+    "added_date": "2025-11-14T00:17:04.786186"
   },
   {
     "arxiv": {
@@ -2182,9 +2182,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": "98cfd7b1b29453c4e82536f5afdc6ddc58bbb1b3",
-      "citation_count": 354,
-      "influential_citation_count": 109
+      "paper_id": null,
+      "citation_count": null,
+      "influential_citation_count": null
     },
     "domains": [
       "datasets"
@@ -2194,7 +2194,7 @@
       "lifelong-learning",
       "knowledge-transfer"
     ],
-    "added_date": "2025-11-13T23:41:11.898830"
+    "added_date": "2025-11-14T00:17:04.786199"
   },
   {
     "arxiv": {
@@ -2239,9 +2239,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "7d87cf6fb8ac782e944159887f036f2905764cf6",
+      "citation_count": 2,
+      "influential_citation_count": 0
     },
     "domains": [
       "sim_to_real"
@@ -2251,7 +2251,7 @@
       "digital-twin",
       "gaussian-splatting"
     ],
-    "added_date": "2025-11-13T23:41:11.898836"
+    "added_date": "2025-11-14T00:17:04.786211"
   },
   {
     "arxiv": {
@@ -2296,9 +2296,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "253b41369d003952874c6a47a6038277b165cfa0",
+      "citation_count": 229,
+      "influential_citation_count": 18
     },
     "domains": [
       "sim_to_real"
@@ -2309,7 +2309,7 @@
       "human-videos",
       "cross-embodiment"
     ],
-    "added_date": "2025-11-13T23:41:11.898842"
+    "added_date": "2025-11-14T00:17:04.786230"
   },
   {
     "arxiv": {
@@ -2357,9 +2357,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "c62711f6b5d8620ba36bc2c378ec6ab53f6e197c",
+      "citation_count": 152,
+      "influential_citation_count": 9
     },
     "domains": [
       "sim_to_real"
@@ -2369,7 +2369,7 @@
       "procedural-generation",
       "RoboGen"
     ],
-    "added_date": "2025-11-13T23:41:11.898849"
+    "added_date": "2025-11-14T00:17:04.786244"
   },
   {
     "arxiv": {
@@ -2427,7 +2427,7 @@
       "diffusion",
       "Dreamitate"
     ],
-    "added_date": "2025-11-13T23:41:11.898855"
+    "added_date": "2025-11-14T00:17:04.786256"
   },
   {
     "arxiv": {
@@ -2482,7 +2482,7 @@
       "foundation-model",
       "NVIDIA"
     ],
-    "added_date": "2025-11-13T23:41:11.898862"
+    "added_date": "2025-11-14T00:17:04.786270"
   },
   {
     "arxiv": {
@@ -2539,7 +2539,7 @@
       "contact-rich",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898869"
+    "added_date": "2025-11-14T00:17:04.786291"
   },
   {
     "arxiv": {
@@ -2581,9 +2581,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "33b5b1ad60f5f647208b75e8d2f5069bc2c4bc52",
+      "citation_count": 8,
+      "influential_citation_count": 0
     },
     "domains": [
       "manipulation",
@@ -2595,7 +2595,7 @@
       "collaboration",
       "CoGrasp"
     ],
-    "added_date": "2025-11-13T23:41:11.898875"
+    "added_date": "2025-11-14T00:17:04.786306"
   },
   {
     "arxiv": {
@@ -2639,9 +2639,9 @@
       "views": 109358
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "dd9e6a02ba61cb4839a22c6f53eb867f95828ef8",
+      "citation_count": 4,
+      "influential_citation_count": 0
     },
     "domains": [
       "dexterous",
@@ -2653,7 +2653,7 @@
       "hardware",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898880"
+    "added_date": "2025-11-14T00:17:04.786539"
   },
   {
     "arxiv": {
@@ -2714,7 +2714,7 @@
       "value-maps",
       "Google"
     ],
-    "added_date": "2025-11-13T23:41:11.898886"
+    "added_date": "2025-11-14T00:17:04.786567"
   },
   {
     "arxiv": {
@@ -2763,9 +2763,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "e7a4e987dc250ac6a016ee2011bc7a552cfa8e8a",
+      "citation_count": 364,
+      "influential_citation_count": 16
     },
     "domains": [
       "mobile_manipulation",
@@ -2777,7 +2777,7 @@
       "planning",
       "Stanford"
     ],
-    "added_date": "2025-11-13T23:41:11.898892"
+    "added_date": "2025-11-14T00:17:04.786582"
   },
   {
     "arxiv": {
@@ -2819,9 +2819,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "05bad81069c8b11202e90ac16c543efc774e2800",
+      "citation_count": 206,
+      "influential_citation_count": 25
     },
     "domains": [
       "mobile_manipulation"
@@ -2832,7 +2832,7 @@
       "exploration",
       "NoMaD"
     ],
-    "added_date": "2025-11-13T23:41:11.898898"
+    "added_date": "2025-11-14T00:17:04.786593"
   },
   {
     "arxiv": {
@@ -2894,9 +2894,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "5a9cb1b3dc4655218b3deeaf4a2417a9a8cd0891",
+      "citation_count": 5219,
+      "influential_citation_count": 840
     },
     "domains": [
       "perception"
@@ -2907,7 +2907,7 @@
       "DINOv2",
       "Meta"
     ],
-    "added_date": "2025-11-13T23:41:11.898910"
+    "added_date": "2025-11-14T00:17:04.786608"
   },
   {
     "arxiv": {
@@ -2964,7 +2964,7 @@
       "code-generation",
       "Google"
     ],
-    "added_date": "2025-11-13T23:41:11.898916"
+    "added_date": "2025-11-14T00:17:04.786621"
   },
   {
     "arxiv": {
@@ -3025,7 +3025,7 @@
       "prompting",
       "ProgPrompt"
     ],
-    "added_date": "2025-11-13T23:41:11.898921"
+    "added_date": "2025-11-14T00:17:04.786646"
   },
   {
     "arxiv": {
@@ -3069,9 +3069,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "dc135dabef805c7271f53ec4b212bdf8996cfd9d",
+      "citation_count": 143,
+      "influential_citation_count": 10
     },
     "domains": [
       "hri_planning"
@@ -3082,7 +3082,7 @@
       "planning",
       "AutoTAMP"
     ],
-    "added_date": "2025-11-13T23:41:11.898926"
+    "added_date": "2025-11-14T00:17:04.786660"
   },
   {
     "arxiv": {
@@ -3123,9 +3123,9 @@
       "views": null
     },
     "semantic_scholar": {
-      "paper_id": null,
-      "citation_count": null,
-      "influential_citation_count": null
+      "paper_id": "c5d18dbb92d0cd5393baa1e69de33d6922ac3e57",
+      "citation_count": 190,
+      "influential_citation_count": 20
     },
     "domains": [
       "hri_planning"
@@ -3136,7 +3136,7 @@
       "collaboration",
       "RoCo"
     ],
-    "added_date": "2025-11-13T23:41:11.898931"
+    "added_date": "2025-11-14T00:17:04.786672"
   },
   {
     "arxiv": {
@@ -3193,6 +3193,6 @@
       "LLM",
       "gestures"
     ],
-    "added_date": "2025-11-13T23:41:11.898935"
+    "added_date": "2025-11-14T00:17:04.786684"
   }
 ]

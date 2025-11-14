@@ -1,9 +1,19 @@
 import json
+import os
+import tempfile
+import requests
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
+from google import genai
+from google.genai import types
 from scoring import score_paper
 
-DOMAIN_CONTENT = {
+load_dotenv()
+
+gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+DOMAIN_STATIC_CONTENT = {
     "vla": {
         "title": "Foundation Models & VLAs",
         "intro": """Vision-Language-Action (VLA) models represent a paradigm shift in robotics by combining visual perception, natural language understanding, and action prediction in a single unified model. These foundation models leverage large-scale pre-training on internet data and robot demonstrations to enable general-purpose robotic manipulation.
@@ -415,17 +425,143 @@ Recent work integrates gestures, gaze, and language for natural multimodal human
     }
 }
 
-def generate_domain_table(papers: list[dict]) -> str:
+def get_papers_for_domain(domain: str, papers_file: Path) -> list[dict]:
+    with open(papers_file, 'r') as f:
+        papers = json.load(f)
+
+    domain_papers = [p for p in papers if domain in p.get('domains', [])]
+    papers_with_scores = [(p, score_paper(p)) for p in domain_papers]
+    papers_with_scores.sort(key=lambda x: x[1], reverse=True)
+
+    return [p for p, _ in papers_with_scores]
+
+def load_previous_trends(domain: str, data_dir: Path) -> str | None:
+    trends_file = data_dir / f"trends_{domain}.txt"
+    if trends_file.exists():
+        with open(trends_file, 'r') as f:
+            return f.read()
+    return None
+
+def save_trends(domain: str, trends: str, data_dir: Path):
+    trends_file = data_dir / f"trends_{domain}.txt"
+    with open(trends_file, 'w') as f:
+        f.write(trends)
+
+def download_paper_pdfs(papers: list[dict], temp_dir: str, max_papers: int = 5) -> dict[str, str]:
+    pdf_paths = {}
+
+    for paper in papers[:max_papers]:
+        arxiv_id = paper['arxiv']['arxiv_id'].split('v')[0]
+        pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+        pdf_path = os.path.join(temp_dir, f"{arxiv_id}.pdf")
+
+        try:
+            response = requests.get(pdf_url, timeout=30)
+            response.raise_for_status()
+
+            with open(pdf_path, 'wb') as f:
+                f.write(response.content)
+
+            pdf_paths[arxiv_id] = pdf_path
+            print(f"    Downloaded {arxiv_id}.pdf")
+        except Exception as e:
+            print(f"    Failed to download {arxiv_id}: {e}")
+
+    return pdf_paths
+
+def extract_paper_content_from_pdfs(pdf_paths: dict[str, str]) -> str:
+    if not pdf_paths:
+        return ""
+
+    paper_contents = []
+
+    for arxiv_id, pdf_path in pdf_paths.items():
+        try:
+            with open(pdf_path, 'rb') as f:
+                pdf_data = f.read()
+
+            pdf_part = types.Part.from_bytes(
+                data=pdf_data,
+                mime_type="application/pdf"
+            )
+
+            response = gemini_client.models.generate_content(
+                model="gemini-2.0-flash-exp",
+                contents=[
+                    pdf_part,
+                    "Extract the key technical content from this paper including: main contributions, methods, experiments, and results. Provide a comprehensive summary (500-800 words) focusing on technical details."
+                ]
+            )
+
+            paper_contents.append(f"Paper {arxiv_id}:\n{response.text}\n")
+            print(f"    Extracted content from {arxiv_id}")
+        except Exception as e:
+            print(f"    Failed to extract content from {arxiv_id}: {e}")
+
+    return "\n\n".join(paper_contents)
+
+def generate_trends_with_gemini(domain: str, papers: list[dict], previous_trends: str | None, paper_full_content: str = "") -> str:
+    domain_title = DOMAIN_STATIC_CONTENT.get(domain, {}).get('title', domain)
+
+    papers_summary = "\n".join([
+        f"- {p['arxiv']['title']} ({p['arxiv']['published_date']})\n  Citations: {p['semantic_scholar'].get('citation_count', 0)}, Stars: {p['github'].get('stars', 0)}"
+        for p in papers[:10]
+    ])
+
+    previous_context = ""
+    if previous_trends:
+        previous_context = f"\n\nPREVIOUS TREND ANALYSIS (use this to provide continuity and identify NEW developments):\n{previous_trends}"
+
+    full_content_context = ""
+    if paper_full_content:
+        full_content_context = f"\n\nFULL PAPER CONTENT (use this detailed technical content for deeper analysis):\n{paper_full_content}"
+
+    prompt = f"""You are a robotics research analyst. Analyze the latest papers in {domain_title} and generate a comprehensive trends report.
+
+PAPERS IN THIS DOMAIN:
+{papers_summary}
+{full_content_context}
+{previous_context}
+
+Generate a detailed trends analysis with these sections:
+
+## Trends Report: {domain_title}
+
+### 1. Emerging Techniques
+What new methods or approaches are gaining traction? Be specific about technical innovations.
+
+### 2. Key Innovations
+What breakthroughs or novel ideas stand out? Focus on concrete technical contributions.
+
+### 3. Research Directions
+Where is the field heading? What problems are researchers focused on solving?
+
+### 4. Open Challenges
+What unsolved problems or gaps exist? What makes these challenges difficult?
+
+### 5. Promising Areas for Exploration
+What areas need more research or could yield significant impact? Why are they promising?
+
+Write in a clear, informative style suitable for researchers. Focus on actionable insights and concrete technical details from the papers. Keep each section concise but comprehensive (80-120 words per section).
+
+Return ONLY the trends analysis in markdown format with the section headers above, no preamble or meta-commentary.
+"""
+
+    response = gemini_client.models.generate_content(
+        model="gemini-2.0-flash-exp",
+        contents=prompt
+    )
+
+    return response.text.strip()
+
+def generate_paper_table(papers: list[dict]) -> str:
     if not papers:
         return "_No papers in this domain yet._\n"
-
-    papers_with_scores = [(p, score_paper(p)) for p in papers]
-    papers_with_scores.sort(key=lambda x: x[1], reverse=True)
 
     table = "| Paper | PDF | Date | GitHub | Stars | Citations | Twitter | Summary |\n"
     table += "|-------|-----|------|--------|-------|-----------|---------|----------|\n"
 
-    for paper, score in papers_with_scores:
+    for paper in papers:
         arxiv = paper['arxiv']
         github = paper.get('github', {})
         twitter = paper.get('twitter', {})
@@ -488,57 +624,81 @@ def generate_domain_table(papers: list[dict]) -> str:
 
     return table
 
-def generate_comprehensive_domain_md(domain_key: str, papers: list[dict]) -> str:
-    content = DOMAIN_CONTENT[domain_key]
+def generate_domain_page(domain: str, papers_file: Path, output_dir: Path, data_dir: Path):
+    output_dir.mkdir(exist_ok=True)
+    data_dir.mkdir(exist_ok=True)
 
-    md = f"""# {content['title']}
+    static_content = DOMAIN_STATIC_CONTENT.get(domain)
+    if not static_content:
+        print(f"  Warning: No static content for domain '{domain}'")
+        return
 
-{content['intro']}
+    print(f"  Processing {domain}...")
+    papers = get_papers_for_domain(domain, papers_file)
+    previous_trends = load_previous_trends(domain, data_dir)
+
+    paper_full_content = ""
+    with tempfile.TemporaryDirectory() as temp_dir:
+        print(f"    Downloading PDFs...")
+        pdf_paths = download_paper_pdfs(papers, temp_dir, max_papers=5)
+
+        if pdf_paths:
+            print(f"    Extracting content from {len(pdf_paths)} PDFs...")
+            paper_full_content = extract_paper_content_from_pdfs(pdf_paths)
+
+    print(f"    Generating trends analysis...")
+    trends = generate_trends_with_gemini(domain, papers, previous_trends, paper_full_content)
+    save_trends(domain, trends, data_dir)
+
+    content = f"""# {static_content['title']}
+
+{static_content['intro']}
+
+---
+
+## 🔥 Latest Trends & Research Directions
+
+*Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}*
+
+{trends}
 
 ---
 
 ## 📄 Papers in This Domain
 
-{generate_domain_table(papers)}
+{generate_paper_table(papers)}
 
 ---
 
-*This page is automatically updated with the latest research. Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}*
+*This page is automatically updated with the latest research trends and papers.*
 """
-    return md
 
-def generate_all_comprehensive_domains(papers_file: Path, output_dir: Path):
-    with open(papers_file, 'r') as f:
-        papers = json.load(f)
+    domain_file = output_dir / f"{domain}.md"
+    with open(domain_file, 'w') as f:
+        f.write(content)
 
-    output_dir.mkdir(exist_ok=True)
+    print(f"  ✓ Generated {domain}.md")
+    return domain_file
 
-    papers_by_domain = {}
-    for paper in papers:
-        for domain in paper.get('domains', []):
-            if domain not in papers_by_domain:
-                papers_by_domain[domain] = []
-            papers_by_domain[domain].append(paper)
+def generate_all_dynamic_domains(papers_file: Path, output_dir: Path, data_dir: Path):
+    domains = list(DOMAIN_STATIC_CONTENT.keys())
 
-    print(f"Generating comprehensive domain files...\n")
+    print(f"Generating {len(domains)} domain pages with dynamic trends...\n")
 
-    for domain_key in DOMAIN_CONTENT.keys():
-        domain_papers = papers_by_domain.get(domain_key, [])
+    generated_files = []
+    for domain in domains:
+        try:
+            domain_file = generate_domain_page(domain, papers_file, output_dir, data_dir)
+            generated_files.append(domain_file)
+        except Exception as e:
+            print(f"  ✗ Error generating {domain}: {e}")
 
-        filename = f"{domain_key}.md"
-        filepath = output_dir / filename
-
-        md_content = generate_comprehensive_domain_md(domain_key, domain_papers)
-
-        with open(filepath, 'w') as f:
-            f.write(md_content)
-
-        print(f"✓ Generated {filename} ({len(domain_papers)} papers)")
-
-    print(f"\n✅ Generated {len(DOMAIN_CONTENT)} comprehensive domain files")
+    print(f"\n✅ Generated {len(generated_files)} domain pages")
+    return generated_files
 
 if __name__ == "__main__":
     papers_file = Path(__file__).parent.parent / "data" / "papers.json"
     output_dir = Path(__file__).parent.parent / "domains"
+    data_dir = Path(__file__).parent.parent / "data"
 
-    generate_all_comprehensive_domains(papers_file, output_dir)
+    generate_all_dynamic_domains(papers_file, output_dir, data_dir)
