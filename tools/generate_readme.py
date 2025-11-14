@@ -22,7 +22,7 @@ def format_date(date_str):
         return date_str
 
 
-def truncate_title(title, max_len=60):
+def truncate_title(title, max_len=40):
     if len(title) <= max_len:
         return title
     return title[:max_len-3] + "..."
@@ -47,7 +47,7 @@ def generate_paper_row(paper):
     semantic = paper["semantic_scholar"]
 
     arxiv_id = arxiv["arxiv_id"].split("v")[0]
-    title = truncate_title(arxiv["title"], 45)
+    title = truncate_title(arxiv["title"])
     paper_md = f"papers/{arxiv_id}.md"
 
     github_str = "—"
@@ -55,9 +55,11 @@ def generate_paper_row(paper):
         repo_url = github["repo_url"]
         stars = format_number(github.get("stars"))
         forks = format_number(github.get("forks"))
-        github_str = f"⭐[{stars}]({repo_url})<br>🔀[{forks}]({repo_url})"
+        github_str = f"⭐[{stars}]({repo_url})<br>🔀[{forks}]({repo_url})<br> "
+    else:
+        github_str = "—<br> <br> "
 
-    citation_str = "—"
+    citation_str = "—<br> <br> "
     if semantic.get("citation_count") is not None:
         citations = format_number(semantic.get("citation_count"))
         influential = semantic.get("influential_citation_count")
@@ -65,22 +67,20 @@ def generate_paper_row(paper):
         if semantic.get("paper_id"):
             s2_url = f"https://www.semanticscholar.org/paper/{semantic['paper_id']}"
             if influential and influential > 0:
-                citation_str = f"[{citations}]({s2_url})<br>📈{influential}"
+                citation_str = f"[{citations}]({s2_url})<br>📈{influential}<br> "
             else:
-                citation_str = f"[{citations}]({s2_url})"
+                citation_str = f"[{citations}]({s2_url})<br> <br> "
         else:
-            citation_str = citations
+            citation_str = f"{citations}<br> <br> "
 
-    twitter_str = "—"
+    twitter_str = "—<br> <br> "
     tweet_url = twitter.get("tweet_url")
     if tweet_url and (twitter.get("likes") or twitter.get("retweets") or twitter.get("views")):
-        likes = f"❤️[{format_number(twitter['likes'])}]({tweet_url})" if twitter.get("likes") else ""
-        retweets = f"🔁[{format_number(twitter['retweets'])}]({tweet_url})" if twitter.get("retweets") else ""
-        views = f"👁️[{format_number(twitter['views'])}]({tweet_url})" if twitter.get("views") else ""
+        likes = f"❤️[{format_number(twitter['likes'])}]({tweet_url})" if twitter.get("likes") else " "
+        retweets = f"🔁[{format_number(twitter['retweets'])}]({tweet_url})" if twitter.get("retweets") else " "
+        views = f"👁️[{format_number(twitter['views'])}]({tweet_url})" if twitter.get("views") else " "
 
-        line1 = " ".join(filter(None, [likes, retweets]))
-        line2 = views
-        twitter_str = f"{line1}<br>{line2}" if line2 else line1
+        twitter_str = f"{likes}<br>{retweets}<br>{views}"
 
     date = format_date(arxiv.get("published_date", ""))
     authors_short = arxiv["authors"][0].split()[-1] + " et al." if arxiv["authors"] else "—"
