@@ -49,3 +49,5 @@ class Paper(BaseModel):
     tags: list[str] = Field(default_factory=list)
     added_date: str = Field(default_factory=lambda: datetime.now().isoformat())
     relevance_score: float = 0.0
+    gemini_analysis: str | None = None
+    future_directions: list[str] = Field(default_factory=list)

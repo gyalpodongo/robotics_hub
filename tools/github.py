@@ -108,12 +108,13 @@ def get_recent_prs(owner: str, repo: str, limit: int = 5) -> list[dict]:
     prs = []
     for pr in response.json():
         if pr.get("merged_at"):
+            body = pr.get("body") or ""
             prs.append({
                 "number": pr["number"],
                 "title": pr["title"],
                 "url": pr["html_url"],
                 "merged_at": pr["merged_at"],
-                "body": pr.get("body", "")[:200]
+                "body": body[:200]
             })
 
     return prs[:limit]
