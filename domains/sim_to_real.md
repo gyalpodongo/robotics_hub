@@ -1,0 +1,76 @@
+# Sim-to-Real & Transfer
+
+Sim-to-real transfer bridges simulation and physical robots, enabling sample-efficient learning. Recent advances leverage photorealistic rendering and domain randomization.
+
+## What is Sim-to-Real?
+
+Sim-to-real transfer trains policies in simulation then deploys them on real robots.
+
+## Key Approaches
+
+### Digital Twins
+**Real-is-Sim** creates digital twins using 3D Gaussian Splatting.
+
+### Domain Randomization
+**RoboGen** uses procedural generation for infinite task variations.
+
+### Video-to-Reality
+**Dreamitate** learns from human videos via video generation.
+
+## Important Considerations
+
+- **Physics fidelity**: Accurate contact and dynamics simulation
+- **Sensor realism**: Matching camera properties and noise
+- **Domain randomization**: Balancing breadth with learning difficulty
+
+
+---
+
+## 🔥 Latest Trends & Research Directions
+
+*Last Updated: 2025-11-14 00:40 UTC*
+
+### 1. Emerging Techniques
+*   **Dynamic Digital Twins for Sim-to-Real:** "Real-is-Sim" leverages continuously synchronized dynamic digital twins powered by Embodied Gaussians. This is a departure from static or pre-defined simulation environments, allowing real-time adaptation of the simulation to match the real world.
+*   **Generative Models for Data Augmentation:** "RoboGen" and "Dreamitate" highlight the use of generative models (LLMs, VLMs, and video diffusion models) to create diverse and potentially infinite training data. RoboGen uses LLMs for task and scene generation, while Dreamitate fine-tunes a video diffusion model on human demonstrations to generate robot actions.
+*   **Affordance Learning from Human Videos:** "Affordances from Human Videos" (VRB) demonstrates the use of human interaction videos as a source of supervision for learning visual affordances, specifically contact points and post-contact trajectories. This is a scalable approach that leverages existing datasets like Epic-Kitchens.
+*   **Tool-Centric Learning:** "Dreamitate" emphasizes the importance of tools in bridging the embodiment gap between humans and robots, suggesting that focusing on tool trajectories facilitates transfer.
+
+### 2. Key Innovations
+*   **Embodied Gaussians for Real-Time Synchronization:** The "Real-is-Sim" paper's use of Embodied Gaussians to represent the world and synchronize the simulator with real-world sensor data is a key innovation, enabling continuous adaptation of the digital twin.
+*   **Automated Curriculum Generation via LLMs:** "RoboGen's" propose-generate-learn cycle, driven by LLMs, automates the generation of tasks, scenes, and training supervisions. The use of LLMs to reason about object affordances and task semantics is a novel application.
+*   **Video Generation for Visuomotor Policy Learning:** "Dreamitate" innovatively fine-tunes pre-trained video diffusion models on human demonstrations. This approach enables the robot to "imagine" the task being performed, leveraging the priors learned by the video model.
+*   **Contact Points and Trajectories as Actionable Affordances:** The VRB paper introduces contact points and post-contact trajectories as a robot-centric representation of visual affordances. This representation is versatile and can be integrated with various robot learning paradigms.
+
+### 3. Research Directions
+*   **Integrating LLMs and Simulation:** "RoboGen's" successful use of LLMs for task and scene generation opens up new research directions for leveraging LLMs in simulation-based robot learning. This includes using LLMs to create more realistic and diverse environments, generate reward functions, and decompose complex tasks into sub-tasks.
+*   **Improving Generalization through Video Prediction:** "Dreamitate" demonstrates the potential of video prediction for improving generalization in robot manipulation. Future research could focus on developing more sophisticated video prediction models that can handle more complex tasks and environments.
+*   **Learning Affordances for Skill Acquisition:** The VRB paper shows the value of learning affordances from human videos. Future research could focus on developing more robust and efficient methods for learning affordances, as well as exploring new representations of affordances.
+*   **Closing the Loop in Dynamic Digital Twins:** "Real-is-Sim" focuses on behavior cloning. A logical next step would be to investigate how to use the dynamic digital twin for online reinforcement learning or adaptive control, closing the loop between the real world and the simulation.
+
+### 4. Open Challenges
+*   **Computational Cost of Generative Models:** "Dreamitate" acknowledges the high computational cost of video models, which limits real-time closed-loop control. Reducing the computational cost of generative models is a major challenge.
+*   **Simulating Complex Dynamics:** Accurately simulating complex dynamics, such as granular material interaction in "Dreamitate", remains a challenge. Improving the fidelity of physics simulations is crucial for sim-to-real transfer.
+*   **Generalizing Affordance Learning:** The VRB paper focuses on learning affordances from egocentric human videos. Generalizing this approach to other types of videos and tasks is a challenge.
+*   **Ensuring Safety and Reliability:** As "RoboGen" generates tasks and environments autonomously, ensuring the safety and reliability of the generated skills is a critical challenge.
+
+### 5. Promising Areas for Exploration
+*   **Multi-Modal Learning:** Combining visual, tactile, and force feedback in the dynamic digital twin framework of "Real-is-Sim" could lead to more robust and adaptable robot control policies.
+*   **Few-Shot and Zero-Shot Learning:** Exploring few-shot and zero-shot learning approaches in the context of RoboGen's generative simulation framework could enable robots to quickly adapt to new tasks and environments.
+*   **Incorporating Common-Sense Knowledge:** Integrating common-sense knowledge from LLMs into the VRB framework could improve the quality and relevance of the learned affordances.
+*   **Human-Robot Collaboration:** Using Dreamitate's video generation approach to predict human actions and intentions could enable robots to collaborate more effectively with humans.
+
+---
+
+## 📄 Papers in This Domain
+
+| Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
+|-------|-----|------|---------|--------|-----------|--------|---------|----------|
+| [Real-is-Sim: Bridging the Sim-to-Real...](../papers/2504.03597.md) | [2504.03597](https://arxiv.org/abs/2504.03597) | Apr 04, 2025 | Abou-Chakra et al. | — | [2](https://www.semanticscholar.org/paper/7d87cf6fb8ac782e944159887f036f2905764cf6) | None | [Apr 04, 2025](../papers/2504.03597.md) | — |
+| [RoboGen: Towards Unleashing Infinite ...](../papers/2311.01455.md) | [2311.01455](https://arxiv.org/abs/2311.01455) | Nov 02, 2023 | Wang et al. | ⭐[—](https://github.com/robogen-ai/robogen)<br>🔀[—](https://github.com/robogen-ai/robogen) | [152](https://www.semanticscholar.org/paper/c62711f6b5d8620ba36bc2c378ec6ab53f6e197c)<br>📈9 | None | [Nov 02, 2023](../papers/2311.01455.md) | — |
+| [Dreamitate: Real-World Visuomotor Pol...](../papers/2406.16862.md) | [2406.16862](https://arxiv.org/abs/2406.16862) | Jun 24, 2024 | Liang et al. | — | [49](https://www.semanticscholar.org/paper/b0ac4f62f55bcf0427008e18f1b4b5bf7ee43df2)<br>📈3 | None | [Jun 24, 2024](../papers/2406.16862.md) | — |
+| [Affordances from Human Videos as a Ve...](../papers/2304.08488.md) | [2304.08488](https://arxiv.org/abs/2304.08488) | Apr 17, 2023 | Bahl et al. | — | [229](https://www.semanticscholar.org/paper/253b41369d003952874c6a47a6038277b165cfa0)<br>📈18 | None | [Apr 17, 2023](../papers/2304.08488.md) | — |
+
+---
+
+*This page is automatically updated with the latest research trends and papers.*

@@ -168,6 +168,8 @@ def generate_domain_section(papers, domain_name):
     if not domain_papers:
         return ""
 
+    domain_papers.sort(key=lambda p: p.get('relevance_score', 0), reverse=True)
+
     domain_info = DOMAIN_INFO.get(domain_name, {"title": domain_name.replace('_', ' ').title(), "link": None})
 
     if domain_info.get("link"):

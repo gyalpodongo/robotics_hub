@@ -1,8 +1,8 @@
 import requests
+import time
 from schemas import SemanticScholarMetrics
 
-
-def fetch_semantic_scholar_metrics(arxiv_id: str) -> SemanticScholarMetrics:
+def fetch_semantic_scholar_metrics(arxiv_id: str, max_retries: int = 5) -> SemanticScholarMetrics:
     if not arxiv_id:
         return SemanticScholarMetrics()
 
@@ -12,23 +12,29 @@ def fetch_semantic_scholar_metrics(arxiv_id: str) -> SemanticScholarMetrics:
         "fields": "paperId,citationCount,influentialCitationCount"
     }
 
-    response = requests.get(
-        f"https://api.semanticscholar.org/graph/v1/paper/arXiv:{clean_arxiv_id}",
-        params=params
-    )
+    for attempt in range(max_retries):
+        response = requests.get(
+            f"https://api.semanticscholar.org/graph/v1/paper/arXiv:{clean_arxiv_id}",
+            params=params
+        )
 
-    if response.status_code != 200:
-        print(f"Semantic Scholar API error: {response.status_code}")
-        return SemanticScholarMetrics()
+        if response.status_code == 200:
+            data = response.json()
+            return SemanticScholarMetrics(
+                paper_id=data.get("paperId"),
+                citation_count=data.get("citationCount"),
+                influential_citation_count=data.get("influentialCitationCount")
+            )
+        elif response.status_code == 429:
+            wait_time = (2 ** attempt) + (attempt * 0.1)
+            print(f"  Rate limited, waiting {wait_time:.1f}s...")
+            time.sleep(wait_time)
+        else:
+            print(f"  Semantic Scholar API error: {response.status_code}")
+            return SemanticScholarMetrics()
 
-    data = response.json()
-
-    return SemanticScholarMetrics(
-        paper_id=data.get("paperId"),
-        citation_count=data.get("citationCount"),
-        influential_citation_count=data.get("influentialCitationCount")
-    )
-
+    print(f"  Max retries reached for {arxiv_id}")
+    return SemanticScholarMetrics()
 
 if __name__ == "__main__":
     test_arxiv_ids = [

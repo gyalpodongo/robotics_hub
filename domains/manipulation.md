@@ -1,73 +1,75 @@
-# Robot Manipulation
+# Manipulation & Grasping
 
-Robot manipulation is the core capability enabling robots to interact with and modify their physical environment. From grasping objects to complex bimanual assembly, manipulation research spans hardware design, control, perception, and learning.
+Robotic manipulation encompasses grasping, placing, and contact-rich interactions. Recent advances combine learning with geometric reasoning.
 
-## What is Robot Manipulation?
+## What is Robotic Manipulation?
 
-Manipulation encompasses all robot behaviors that involve physical interaction with objects: picking, placing, reorienting, assembling, deforming, and more. It requires coordinating perception (seeing the object), planning (how to grasp it), and control (executing the motion).
+Manipulation requires coordinating perception, planning, and control for object interactions.
 
-## Key Components
+## Key Approaches
 
-### End Effectors
-- **Parallel Grippers**: Simple two-finger grippers for basic grasping
-- **Multi-fingered Hands**: Dexterous hands with many degrees of freedom (e.g., Shadow Hand, Allegro Hand, RUKA)
-- **Suction Grippers**: Vacuum-based grasping for flat objects
-- **Soft Grippers**: Compliant materials for delicate objects
+### Language-Conditioned Manipulation
+**VoxPoser** uses LLMs to generate 3D value maps for manipulation.
 
-### Manipulation Primitives
-- **Pick and Place**: Fundamental operation for object rearrangement
-- **In-hand Manipulation**: Reorienting objects within the gripper
-- **Bimanual Manipulation**: Coordinating two arms for complex tasks
-- **Contact-rich Manipulation**: Tasks involving sliding, pushing, or rolling
+### Contact-Rich Manipulation
+**Adaptive Compliance Policy** handles contact-rich tasks like insertion.
 
-### Control Approaches
-- **Position Control**: Directly commanding end-effector or joint positions
-- **Force Control**: Regulating contact forces and torques
-- **Impedance Control**: Balancing position and force compliance
-- **Hybrid Control**: Combining position and force control
+### 6-DoF Grasping
+**CoGrasp** generates grasps for human-robot collaboration.
 
-## Learning Paradigms
+## Important Considerations
 
-- **Imitation Learning**: Learning from human or expert demonstrations
-- **Reinforcement Learning**: Learning through trial and error
-- **Model-based RL**: Using learned dynamics models for planning
-- **Diffusion Policies**: Generating action sequences via diffusion models
-
-## Challenges
-
-- **Contact Dynamics**: Modeling and controlling contact interactions
-- **Partial Observability**: Occlusions and limited sensor views
-- **Generalization**: Adapting to new objects, poses, and environments
-- **Long-horizon Tasks**: Planning and executing multi-step behaviors
-- **Safety**: Preventing collisions and unsafe forces
-
-## Application Domains
-
-- **Warehouse Automation**: Bin picking, packing, sorting
-- **Manufacturing**: Assembly, welding, quality inspection
-- **Household Robotics**: Cooking, cleaning, laundry
-- **Healthcare**: Surgical assistance, rehabilitation
+- **Grasp stability**: Reliable grasps under uncertainty
+- **Contact modeling**: Friction and multi-contact interactions
+- **Object diversity**: Generalizing to novel objects
 
 
 ---
 
 ## 🔥 Latest Trends & Research Directions
 
-*Last Updated: 2025-11-13 13:21 UTC*
+*Last Updated: 2025-11-14 00:41 UTC*
 
-### Robot Manipulation Trends Report
+### 1. Emerging Techniques
 
-The latest advancements in Robot Manipulation, exemplified by "RUKA: Rethinking the Design of Humanoid Hands with Learning," underscore a definitive shift towards integrating sophisticated learning-based control with cost-effective, human-inspired hardware. This convergence is driving significant progress in achieving highly dexterous and adaptable robotic systems.
+Recent papers highlight several emerging techniques in robotic manipulation and grasping. **Language-conditioned manipulation using LLMs and VLMs** is gaining significant traction, exemplified by VoxPoser. It involves generating 3D value maps from language instructions to guide robot trajectories, eliminating the need for predefined motion primitives. This approach leverages LLMs for high-level task decomposition and VLM integration for scene understanding.
 
-1.  **Emerging Techniques**: The RUKA paper solidifies the practical utility of **data-driven control for underactuated, tendon-driven robotic systems**. By leveraging external motion capture (MANUS Haptic Gloves) for autonomous ground-truth data collection, the work demonstrates a robust methodology for learning complex, non-linear inverse kinematics/dynamics without relying on expensive in-hand sensors. The adoption of **LSTM+MLP architectures** is crucial for effectively encoding temporal information and predicting motor commands from desired joint or fingertip poses, offering a significant advantage over static models. Furthermore, the emphasis on **auto-calibration scripts** highlights an emerging technique for ensuring consistency and transferability of learned controllers across different hardware builds, addressing a key barrier to wider adoption of complex robotic hardware.
+Another technique is **learning adaptive compliance policies**, as seen in "Adaptive Compliance Policy." It involves enabling robots to dynamically adjust their compliance spatially and temporally, crucial for robust contact-rich manipulation. This includes using diffusion models for policy learning and FFT to encode force/torque data for better control. Kinesthetic teaching is used to transfer human compliance to robots.
 
-2.  **Key Innovations**: A standout innovation is RUKA's success in **breaking traditional hardware trade-offs** of precision, compactness, strength, and affordability. By combining an anthropomorphic, open-source hardware design (under $1,300) with a powerful learning-based control system, it achieves superior performance metrics (e.g., Kapandji 10/10, 6.0 kg payload) compared to more expensive alternatives. The **novel data-driven control approach** that circumvents in-hand encoders is central to this, enabling high-performance manipulation from low-cost, compliant hardware. This represents a breakthrough in making advanced robotic dexterity accessible for broad research and potential real-world deployment.
+Data-driven control using **motion capture and LSTM networks** to control tendon-driven hands, like RUKA, is also emerging. This approach enables robust control of underactuated systems by learning the complex mapping between motor positions and joint angles, bypassing the need for precise kinematic models and in-hand sensors.
 
-3.  **Research Directions**: The field is heavily focused on achieving **human-level dexterity and generalization** in unstructured environments, with an increasing emphasis on anthropomorphic design and intuitive human-robot interaction. RUKA directly contributes to this by providing a highly capable, human-morphology hand designed for seamless learning from human demonstrations. The demonstrated success in **teleoperation and rapid policy learning (e.g., HuDOR framework)** signals a strong push towards enabling robots to quickly acquire and adapt manipulation skills. Furthermore, the project reinforces the critical direction of developing **cost-effective, open-source, and easily manufacturable robotic hardware** to accelerate research and deployment.
+### 2. Key Innovations
 
-4.  **Open Challenges**: While RUKA makes significant strides, several open challenges persist. The **cost and complexity of high-fidelity data collection for manipulation** remain a barrier, particularly the reliance on specialized equipment like the MANUS gloves for full replication. The **absence of intrinsic tactile sensing** limits the robot's ability to perform truly robust and reactive in-hand manipulation tasks, especially in contact-rich scenarios. Further work is needed to address the **limitations in anthropomorphic dexterity**, such as the lack of active MCP abduction, which hinders the full range of human-like grasps. Lastly, mitigating **hardware wear and tear** in low-cost components (e.g., plastic gears) remains an ongoing engineering challenge, even with easily repairable designs.
+A standout innovation is **VoxPoser's composable 3D value maps**, which provide a flexible and interpretable way to represent manipulation tasks specified by language. The use of LLMs to generate Python code that interacts with VLMs and Numpy for voxel grid manipulation is a novel approach to grounding language instructions in robot actions.
 
-5.  **Promising Areas for Exploration**: Building on RUKA's foundation, promising avenues for research include developing **alternative, more affordable, and scalable methods for high-fidelity manipulation data collection**, potentially leveraging simulation-to-real transfer with robust domain randomization or self-supervised learning on real hardware. Integrating **advanced tactile sensing** (e.g., vision-based or highly compliant sensors) directly into the learned control loop is crucial for next-generation dexterity. Exploring **hybrid control architectures** that blend learned data-driven models with physics-informed models or traditional control strategies could offer robustness and interpretability. Finally, extending the **open-source, low-cost, learning-enabled design philosophy** to other complex robotic components and even full robot systems promises to democratize advanced robotics research and development.
+The **adaptive compliance formulation** that simplifies human compliance extraction for learning is also a key innovation. Instead of attempting to learn the full, likely ill-conditioned human compliance profile directly, the method focuses on finding a stiffness matrix that minimizes internal forces while enabling accurate motion tracking.
+
+RUKA's **combination of low-cost, 3D-printed hardware with a learning-based controller** is another breakthrough. Achieving high dexterity and strength with affordable components opens up new possibilities for widespread robotic adoption. The autonomous data collection method using motion capture to train LSTMs is central to this innovation.
+
+### 3. Research Directions
+
+The field is pushing towards **general-purpose robots capable of performing a wide variety of manipulation tasks in unstructured environments**. LLMs and VLMs provide flexibility when defining manipulation goals for robot systems. The trend of using learning-based compliance policies for robotic systems is rising. Furthermore, **human-robot collaboration** is emphasized with the desire to design collaborative robotic systems that can assist humans with manipulation tasks.
+
+Another key research direction is **creating robots that can quickly learn manipulation skills through imitation or reinforcement learning**. Teleoperation and policy learning frameworks are demonstrating the potential for robots to adapt to new tasks and environments. The goal is to reduce the cost and effort required to train robots for specific applications.
+
+### 4. Open Challenges
+
+Several open challenges remain:
+
+*   **Robustness to environment changes** for LLM-based manipulation. These methods often rely on the ability of VLMs to accurately sense the environment.
+*   **Limited Tactile Sensing:** Tactile sensing still remains an open challenge in robotic hands to increase contact sensitivity and robustness.
+*   **Data Collection:** High-quality manipulation data collection remains a bottleneck, hindering the development of more sophisticated learning-based controllers. Sim-to-real transfer techniques need to be improved to reduce reliance on real-world data.
+*   **Affordability vs. Durability:** Balancing affordability with durability in robotic hardware, especially for tendon-driven systems with many moving parts, continues to be a challenge. Low-cost components are often prone to wear and tear.
+*   **Safety and Trust:** Ensuring the safety and trustworthiness of robots working in close proximity to humans is critical.
+### 5. Promising Areas for Exploration
+
+Promising areas for exploration include:
+
+*   **Incorporating Force/Torque Feedback:** Integrating force/torque feedback into LLM-based manipulation frameworks could improve robustness and precision in contact-rich tasks.
+*   **Multimodal Perception:** Combining visual, tactile, and auditory sensing could provide a more complete understanding of the environment and improve manipulation performance.
+*   **Self-Supervised Learning:** Exploring self-supervised learning techniques for manipulation could reduce the need for labeled data and enable robots to learn from their own experience.
+*   **Hybrid Control Architectures:** Blending learning-based control with traditional control strategies could offer a balance between adaptability and robustness.
+*   **Open-Source Hardware and Software:** Continued development and sharing of open-source hardware and software platforms is essential for accelerating research and innovation in the field.
 
 ---
 
@@ -75,8 +77,11 @@ The latest advancements in Robot Manipulation, exemplified by "RUKA: Rethinking 
 
 | Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
 |-------|-----|------|---------|--------|-----------|--------|---------|----------|
-| [RUKA: Rethinking the Design of Humanoid Ha...](../papers/2504.13165.md) | [2504.13165](https://arxiv.org/abs/2504.13165v1) | Apr 17, 2025 | Zorin et al. | ⭐[153](https://github.com/ruka-hand/RUKA)<br>🔀[20](https://github.com/ruka-hand/RUKA) | [4](https://www.semanticscholar.org/paper/dd9e6a02ba61cb4839a22c6f53eb867f95828ef8) | 3 | [Apr 17, 2025](../papers/2504.13165.md) | ❤️[445](https://x.com/irmakkguzey/status/1913276064287305730) 🔁[100](https://x.com/irmakkguzey/status/1913276064287305730)<br>👁️[109.3k](https://x.com/irmakkguzey/status/1913276064287305730) |
+| [VoxPoser: Composable 3D Value Maps fo...](../papers/2307.05973.md) | [2307.05973](https://arxiv.org/abs/2307.05973) | Jul 12, 2023 | Huang et al. | — | [674](https://www.semanticscholar.org/paper/1cd8373490efc2d74c2796f4b2aa27c7d4415ec9)<br>📈54 | None | [Jul 12, 2023](../papers/2307.05973.md) | — |
+| [Adaptive Compliance Policy: Learning ...](../papers/2410.09309.md) | [2410.09309](https://arxiv.org/abs/2410.09309) | Oct 12, 2024 | Hou et al. | ⭐[92](https://github.com/yifan-hou/adaptive_compliance_policy)<br>🔀[8](https://github.com/yifan-hou/adaptive_compliance_policy) | — | 1 | [Oct 12, 2024](../papers/2410.09309.md) | — |
+| [RUKA: Rethinking the Design of Humano...](../papers/2504.13165.md) | [2504.13165](https://arxiv.org/abs/2504.13165) | Apr 17, 2025 | Zorin et al. | ⭐[153](https://github.com/ruka-hand/RUKA)<br>🔀[20](https://github.com/ruka-hand/RUKA) | [4](https://www.semanticscholar.org/paper/dd9e6a02ba61cb4839a22c6f53eb867f95828ef8) | 3 | [Apr 17, 2025](../papers/2504.13165.md) | ❤️[445](https://x.com/irmakkguzey/status/1913276064287305730) 🔁[100](https://x.com/irmakkguzey/status/1913276064287305730)<br>👁️[109.4k](https://x.com/irmakkguzey/status/1913276064287305730) |
+| [CoGrasp: 6-DoF Grasp Generation for H...](../papers/2210.03173.md) | [2210.03173](https://arxiv.org/abs/2210.03173) | Oct 06, 2022 | Keshari et al. | — | [8](https://www.semanticscholar.org/paper/33b5b1ad60f5f647208b75e8d2f5069bc2c4bc52) | None | [Oct 06, 2022](../papers/2210.03173.md) | — |
 
 ---
 
-*This page is automatically updated daily with the latest research trends and papers.*
+*This page is automatically updated with the latest research trends and papers.*

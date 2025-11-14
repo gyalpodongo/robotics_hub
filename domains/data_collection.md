@@ -1,69 +1,55 @@
-# Data Collection & Datasets in Robotics
+# Data Collection & Teleoperation
 
-Data collection is the foundation of modern robot learning. High-quality, diverse datasets enable robots to learn complex behaviors through imitation learning, reinforcement learning, and other data-driven approaches.
+Data collection is the foundation of modern robot learning. Recent innovations focus on scalable, low-cost teleoperation systems that allow efficient human demonstrations.
 
 ## What is Robot Data Collection?
 
-Robot data collection involves capturing demonstrations, teleoperation sequences, or autonomous exploration data that captures the relationship between sensory inputs (vision, proprioception, force/torque) and robot actions. This data serves as the training material for robot learning algorithms.
+Robot data collection captures demonstrations that map sensory inputs to robot actions, serving as training material for learning algorithms.
 
 ## Key Methods
 
-### Teleoperation
-Using interfaces like VR controllers, haptic devices, or custom grippers to collect human demonstrations. Examples include:
-- **UMI (Universal Manipulation Interface)**: Portable hand-held grippers for in-the-wild data collection
-- **ALOHA**: Low-cost bimanual teleoperation system
-- **VR Teleoperation**: Immersive control using VR headsets
+### Portable Teleoperation
+**UMI** uses hand-held grippers for portable, in-the-wild data collection.
 
-### Autonomous Data Collection
-Robots autonomously explore and collect data through:
-- **Self-supervised learning**: Learning from raw sensory data without labels
-- **Random exploration**: Collecting diverse interaction data
-- **Scripted behaviors**: Pre-programmed routines to gather structured data
+### VR-Based Teleoperation
+**XRoboToolkit** provides immersive teleoperation using VR headsets.
 
-### Sim-to-Real Transfer
-Generating synthetic data in simulation and transferring to real robots:
-- **Domain randomization**: Varying simulation parameters for robustness
-- **Realistic rendering**: High-fidelity physics and graphics
-- **Sim2Real datasets**: Paired simulation and real-world data
+### Dexterous Data Collection
+**DexUMI** uses human hands as interfaces for dexterous manipulation data.
 
 ## Important Considerations
 
-- **Data diversity**: Varied environments, objects, and scenarios improve generalization
-- **Data quality**: Clean labels, accurate timestamps, and synchronized sensors
-- **Data scale**: Larger datasets generally lead to better performance
-- **Data efficiency**: Techniques to learn from limited demonstrations
-- **Safety**: Ensuring safe data collection without damaging robots or environments
-
-## Notable Datasets
-
-- **Open X-Embodiment**: Large-scale multi-robot dataset
-- **DROID**: Distributed robot interaction dataset
-- **RoboNet**: Cross-embodiment dataset for robot learning
-- **Bridge Data**: Large-scale manipulation dataset
+- **Data diversity**: Varied environments and objects
+- **Data quality**: Clean labels and synchronized sensors
+- **Data scale**: 100k+ demonstrations for robust performance
+- **Safety**: Protecting robots and environments
 
 
 ---
 
 ## 🔥 Latest Trends & Research Directions
 
-*Last Updated: 2025-11-13 13:20 UTC*
-
-## Trends Report: Data Collection & Datasets in Robotics
+*Last Updated: 2025-11-14 00:37 UTC*
 
 ### 1. Emerging Techniques
-The field is increasingly adopting **robustified decoupled human-centric data acquisition** through purpose-built, low-cost hardware and advanced algorithmic pipelines. The Universal Manipulation Interface (UMI) exemplifies this with its portable, hand-held gripper integrating a wide-FoV GoPro camera and side mirrors for implicit stereo, providing rich visual context crucial for diverse, "in-the-wild" settings. This hardware is underpinned by **high-fidelity visual-inertial SLAM (HD4)**, featuring "Map as Initialization" and "Marker-enhanced Initialization," which ensures accurate 6DoF end-effector pose tracking even in dynamic, texture-deficient environments, directly addressing previous limitations in scaling real-world data collection. Furthermore, **inference-time latency matching (PD1)** is gaining traction as a critical technique to bridge the temporal gap between human demonstrations (zero latency) and robot execution (variable latency), enabling effective transfer of dynamic skills.
+
+Several new techniques are gaining traction. **XR-based teleoperation** is becoming more sophisticated, with frameworks like XRoboToolkit leveraging OpenXR for cross-platform compatibility and low-latency stereoscopic visual feedback, vital for reducing motion sickness and improving control precision. The use of **compliant, bilateral teleoperation interfaces**, as seen in RoboCopilot, is enabling seamless control switching between humans and autonomous policies, facilitating interactive imitation learning. **Human-Gated DAgger (HG-DAgger)** and similar human-in-the-loop interactive learning paradigms are also gaining prominence for refining robot manipulation policies by incorporating human corrective feedback during policy execution. Finally, **hardware adaptation layers** that use optimization to bridge the kinematic gap between human input devices (like exoskeletons) and robot hands, coupled with **software adaptation layers** that replace human demonstrations with simulated robot hand video, as shown in DexUMI, are proving effective in transferring dexterous manipulation skills.
 
 ### 2. Key Innovations
-The **UMI framework itself** stands as a paramount innovation, providing an integrated, open-sourced solution for scalable robot learning. Its core breakthrough lies in enabling **hardware-agnostic and generalizable policies** via a canonical representation using **relative trajectory actions and proprioception (PD2)**. This approach eliminates calibration needs, enhances robustness to tracking errors, and facilitates zero-shot transfer across diverse robot morphologies (e.g., 6DoF to 7DoF arms). The empirical validation of UMI's capacity for **"in-the-wild" generalization** is a significant breakthrough, demonstrating 70% zero-shot success on unseen environments and objects after training on geographically diverse data, starkly contrasting narrow-domain training. This is further supported by the critical role of **CLIP-pretrained ViT vision encoders** in handling the visual complexity and diversity of in-the-wild datasets.
+
+Key innovations include **XRoboToolkit's OpenXR-compliant architecture** for standardized data formats and cross-device compatibility in XR teleoperation. This allows for integration of diverse robot platforms and tracking modalities, demonstrated by the various robot types supported. **RoboCopilot's 20-DOF mobile bimanual robot** with a compliant teleoperation interface and **integrated HG-DAgger** also stands out as a hardware/software system for interactive learning. The **DexUMI framework's bi-level optimization** for designing wearable hand exoskeletons that match target robot hand kinematics, combined with **visual inpainting using SAM2 and ProPainter**, represents a major advancement in minimizing the embodiment gap for dexterous manipulation. This enables policies learned from human demonstrations to be transferred effectively to different robot hands.
 
 ### 3. Research Directions
-Current research is heavily focused on solidifying and extending **robust and generalized human-to-robot skill transfer**, particularly from diverse, unstructured human data. Researchers are actively refining perception and state estimation techniques to extract actionable intent from noisy, varied human observations, as evidenced by UMI's robust SLAM and vision encoder choices. There's a strong emphasis on **scaling to complex, long-horizon, and bimanual tasks**, with UMI demonstrating success in scenarios like dynamic tossing, bimanual cloth folding using relative inter-gripper proprioception (PD2.3), and multi-stage dishwashing. The demonstrated capability to generate large-scale, generalized datasets is actively accelerating efforts towards developing **foundation models for robot manipulation**, aiming for policies with unprecedented versatility.
+
+Research is heading towards **more intuitive and effective human-robot collaboration**. This includes improving the fidelity and reducing the latency of XR-based teleoperation systems, as well as the development of more sophisticated control strategies for bimanual manipulation. Researchers are increasingly focused on **interactive imitation learning**, where humans provide corrective feedback to refine robot policies in real-time. There is also a significant push towards **dexterous manipulation**, with a focus on minimizing the embodiment gap between human hands and robot hands. This involves the development of new hardware interfaces (e.g., exoskeletons) and software adaptation techniques (e.g., visual inpainting). A key direction is to increase data collection throughput, specifically DexUMI demonstrating 3.2x over traditional teleoperation.
 
 ### 4. Open Challenges
-Despite UMI's advancements, critical challenges persist. The **fidelity gap between nuanced human motor capabilities and robot actuation limits** remains, necessitating further advancements in embodiment-aware policy adaptation, especially for highly dexterous or compliant manipulation beyond end-effector poses. While UMI's SLAM is robust, ensuring its performance in **extremely challenging visual conditions** (e.g., extreme lighting, reflective surfaces, rapid occlusions) in truly arbitrary "in-the-wild" settings remains an area for improvement. Scaling policy learning from **truly vast and potentially inconsistent human demonstrations**, which UMI's ease of collection enables, presents challenges in robust learning from high-variance or even contradictory data. Finally, ensuring **safety and interpretability** for policies learned from such broadly collected human data, particularly for real-world deployment, continues to be a complex validation hurdle.
+
+Open challenges include **improving the robustness and reliability of XR-based teleoperation systems**, particularly in the face of network latency and tracking errors. **Scaling interactive imitation learning to more complex and long-horizon tasks** remains a challenge, as does ensuring that human feedback is consistent and reliable. **Generalizing dexterous manipulation skills across different robot hands** is also difficult, as it requires careful consideration of the kinematic and dynamic differences between the human hand and the robot hand. Ensuring the **safety and intuitiveness of teleoperated systems** as they become more complex is also critical for real-world deployment.
 
 ### 5. Promising Areas for Exploration
-Building on the UMI paradigm, highly promising areas include the **integration of multimodal human data**, extending beyond visual-inertial to incorporate haptics, language, or physiological signals, enriching the universal skill representation. Leveraging UMI's capacity for large-scale, diverse dataset generation to train **large-scale foundation models for general-purpose robot manipulation** is a high-impact direction. Further research into **advanced kinodynamic adaptation** is crucial for reliably transferring UMI-derived policies to a broader spectrum of robots with vastly different kinematics and dynamics. Lastly, exploring **active teaching paradigms** that allow humans to provide real-time corrective feedback or specify task subgoals within UMI-like frameworks could significantly enhance learning efficiency and policy precision.
+
+Promising areas for exploration include the **integration of multimodal feedback** (e.g., haptic, visual, auditory) in XR-based teleoperation systems to improve operator situation awareness. This could also involve the **incorporation of AI-based assistance** to help operators make better decisions. **Developing more sophisticated imitation learning algorithms** that can learn from both expert demonstrations and novice corrections is another promising area. The use of **tactile sensing** in dexterous manipulation systems also warrants further investigation. Building datasets that expose the challenges of the real world.
 
 ---
 
@@ -71,8 +57,11 @@ Building on the UMI paradigm, highly promising areas include the **integration o
 
 | Paper | PDF | Date | Authors | GitHub | Citations | Issues | Changes | Twitter |
 |-------|-----|------|---------|--------|-----------|--------|---------|----------|
-| [Universal Manipulation Interface: In-The-W...](../papers/2402.10329.md) | [2402.10329](https://arxiv.org/abs/2402.10329v3) | Feb 15, 2024 | Chi et al. | ⭐[1.1k](https://github.com/real-stanford/universal_manipulation_interface)<br>🔀[201](https://github.com/real-stanford/universal_manipulation_interface) | [342](https://www.semanticscholar.org/paper/40beef770a0f6b8cb2aa90587988b61080c40ba9)<br>📈39 | 63 | [Feb 15, 2024](../papers/2402.10329.md) | ❤️[1.8k](https://x.com/chichengcc/status/1758539728444629158) 🔁[370](https://x.com/chichengcc/status/1758539728444629158)<br>👁️[432.1k](https://x.com/chichengcc/status/1758539728444629158) |
+| [Universal Manipulation Interface: In-...](../papers/2402.10329.md) | [2402.10329](https://arxiv.org/abs/2402.10329) | Feb 15, 2024 | Chi et al. | ⭐[1.1k](https://github.com/real-stanford/universal_manipulation_interface)<br>🔀[202](https://github.com/real-stanford/universal_manipulation_interface) | — | 63 | [Feb 15, 2024](../papers/2402.10329.md) | ❤️[1.8k](https://x.com/chichengcc/status/1758539728444629158) 🔁[370](https://x.com/chichengcc/status/1758539728444629158)<br>👁️[432.2k](https://x.com/chichengcc/status/1758539728444629158) |
+| [XRoboToolkit: A Cross-Platform Framew...](../papers/2508.00097.md) | [2508.00097](https://arxiv.org/abs/2508.00097) | Jul 31, 2025 | Zhao et al. | — | [2](https://www.semanticscholar.org/paper/f2b6c0a329270d3e90cfaa1604c6861ed563e67c)<br>📈1 | None | [Jul 31, 2025](../papers/2508.00097.md) | — |
+| [RoboCopilot: Human-in-the-loop Intera...](../papers/2503.07771.md) | [2503.07771](https://arxiv.org/abs/2503.07771) | Mar 10, 2025 | Wu et al. | — | [12](https://www.semanticscholar.org/paper/dcd99528e6f8d554af00f59821c98f9a12858713)<br>📈1 | None | [Mar 10, 2025](../papers/2503.07771.md) | — |
+| [DexUMI: Using Human Hand as the Unive...](../papers/2505.21864.md) | [2505.21864](https://arxiv.org/abs/2505.21864) | May 28, 2025 | Xu et al. | ⭐[145](https://github.com/real-stanford/DexUMI)<br>🔀[13](https://github.com/real-stanford/DexUMI) | [10](https://www.semanticscholar.org/paper/22550cdfb498e0890e75e504d8ab5dd5e0ca8729) | 3 | [May 28, 2025](../papers/2505.21864.md) | — |
 
 ---
 
-*This page is automatically updated daily with the latest research trends and papers.*
+*This page is automatically updated with the latest research trends and papers.*

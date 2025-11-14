@@ -29,11 +29,11 @@ def extract_repo_info(github_url):
     return parts[0], parts[1]
 
 
-def generate_paper_page(paper: dict, output_dir: Path):
+def generate_paper_markdown(paper: dict, output_dir: Path) -> Path:
     arxiv = paper["arxiv"]
-    github = paper["github"]
-    twitter = paper["twitter"]
-    semantic = paper["semantic_scholar"]
+    github = paper.get("github", {})
+    twitter = paper.get("twitter", {})
+    semantic = paper.get("semantic_scholar", {})
 
     arxiv_id = arxiv["arxiv_id"].split("v")[0]
     paper_file = output_dir / f"{arxiv_id}.md"
@@ -48,6 +48,8 @@ def generate_paper_page(paper: dict, output_dir: Path):
         prs = get_recent_prs(owner, repo, limit=5)
         commits = get_recent_commits(owner, repo, limit=10)
 
+    relevance_score = paper.get('relevance_score', 0)
+
     content = f"""# {arxiv['title']}
 
 arXiv: [{arxiv_id}]({arxiv['arxiv_url']}) | Published: {format_date(arxiv['published_date'])}
@@ -58,11 +60,11 @@ arXiv: [{arxiv_id}]({arxiv['arxiv_url']}) | Published: {format_date(arxiv['publi
 
 ## 📊 Metrics Summary
 
-| 📄 PDF | ⭐ Stars | 🔀 Forks | 📚 Citations | 📈 Influential | ❤️ Likes | 🔁 Retweets | 👁️ Views | 🔧 Issues | 📝 PRs |
-|---------|---------|---------|-------------|---------------|----------|------------|----------|----------|---------|
-| [{arxiv_id}]({arxiv['arxiv_url']}) | {format_number(github.get('stars'))} | {format_number(github.get('forks'))} | {format_number(semantic.get('citation_count'))} | {semantic.get('influential_citation_count') or '—'} | {format_number(twitter.get('likes'))} | {format_number(twitter.get('retweets'))} | {format_number(twitter.get('views'))} | {github.get('open_issues') or '—'} | {github.get('open_prs') or '—'} |
+| 📄 PDF | ⭐ Stars | 🔀 Forks | 📚 Citations | 📈 Influential | ❤️ Likes | 🔁 Retweets | 👁️ Views | 🔧 Issues | 📝 PRs | 🎯 Score |
+|---------|---------|---------|-------------|---------------|----------|------------|----------|----------|---------|----------|
+| [{arxiv_id}]({arxiv['arxiv_url']}) | {format_number(github.get('stars'))} | {format_number(github.get('forks'))} | {format_number(semantic.get('citation_count'))} | {semantic.get('influential_citation_count') or '—'} | {format_number(twitter.get('likes'))} | {format_number(twitter.get('retweets'))} | {format_number(twitter.get('views'))} | {github.get('open_issues') or '—'} | {github.get('open_prs') or '—'} | {relevance_score:.1f} |
 
-**Links**: [GitHub]({github.get('repo_url')}) • [Twitter]({twitter.get('tweet_url')}) • [Semantic Scholar]({f"https://www.semanticscholar.org/paper/{semantic.get('paper_id')}" if semantic.get('paper_id') else '#'})
+**Links**: [GitHub]({github.get('repo_url') or '#'}) • [Twitter]({twitter.get('tweet_url') or '#'}) • [Semantic Scholar]({f"https://www.semanticscholar.org/paper/{semantic.get('paper_id')}" if semantic.get('paper_id') else '#'})
 
 ---
 
@@ -84,6 +86,16 @@ arXiv: [{arxiv_id}]({arxiv['arxiv_url']}) | Published: {format_date(arxiv['publi
         content += f"\n[View all issues →]({github.get('repo_url')}/issues)\n\n"
     else:
         content += "No recent issues found.\n\n"
+
+    analysis = paper.get('gemini_analysis')
+    if analysis:
+        content += f"""---
+
+## 🔍 Critical Analysis
+
+{analysis}
+
+"""
 
     content += "---\n\n## 🔄 Recent Activity\n\n"
 
@@ -127,6 +139,13 @@ arXiv: [{arxiv_id}]({arxiv['arxiv_url']}) | Published: {format_date(arxiv['publi
     else:
         content += "No recent activity found.\n\n"
 
+    future_directions = paper.get('future_directions', [])
+    if future_directions:
+        content += "---\n\n## 🚀 Future Directions\n\n"
+        for direction in future_directions:
+            content += f"- {direction}\n"
+        content += "\n"
+
     content += f"""---
 
 **Last Updated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}
@@ -138,20 +157,24 @@ arXiv: [{arxiv_id}]({arxiv['arxiv_url']}) | Published: {format_date(arxiv['publi
     return paper_file
 
 
-def generate_all_paper_pages(papers_file: Path, output_dir: Path):
+def generate_all_paper_files(papers_file: Path, output_dir: Path):
     output_dir.mkdir(exist_ok=True)
 
     with open(papers_file, 'r') as f:
         papers = json.load(f)
 
-    generated_files = []
-    for paper in papers:
-        paper_file = generate_paper_page(paper, output_dir)
-        arxiv_id = paper["arxiv"]["arxiv_id"].split("v")[0]
-        print(f"✓ Generated {arxiv_id}.md")
-        generated_files.append(paper_file)
+    print(f"Generating markdown files for {len(papers)} papers...\n")
 
-    return generated_files
+    for i, paper in enumerate(papers, 1):
+        arxiv_id = paper['arxiv']['arxiv_id'].split('v')[0]
+        title = paper['arxiv']['title']
+
+        generate_paper_markdown(paper, output_dir)
+
+        print(f"[{i}/{len(papers)}] Generated {arxiv_id}.md")
+        print(f"  {title[:70]}...")
+
+    print(f"\n✅ Generated {len(papers)} paper files in {output_dir}")
 
 
 if __name__ == "__main__":
@@ -159,5 +182,5 @@ if __name__ == "__main__":
     output_dir = Path(__file__).parent.parent / "papers"
 
     print("Generating paper pages...\n")
-    generated_files = generate_all_paper_pages(papers_file, output_dir)
-    print(f"\n✓ Generated {len(generated_files)} paper pages in {output_dir}")
+    generate_all_paper_files(papers_file, output_dir)
+    print("\n✅ Done!")

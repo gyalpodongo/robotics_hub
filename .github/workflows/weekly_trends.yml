@@ -1,0 +1,43 @@
+name: Weekly Trends Update
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'
+  workflow_dispatch:
+
+jobs:
+  update-trends:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests pydantic google-genai python-dotenv
+
+      - name: Generate domain trends
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python tools/generate_domains.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add domains/*.md data/trends_*.txt
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: weekly trends update [skip ci]"
+            git push
+          fi
