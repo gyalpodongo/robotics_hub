@@ -145,7 +145,7 @@ def generate_readme(papers_file: Path, output_file: Path):
     for paper in papers:
         all_domains.update(paper.get("domains", []))
 
-    readme = f"""# 🤖 AIR Intelligence Hub
+    readme = f"""# 🤖 Robotics Intelligence Hub
 
 > A curated collection of cutting-edge robotics research papers with real-world engagement metrics
 
