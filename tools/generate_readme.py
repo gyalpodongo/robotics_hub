@@ -22,7 +22,7 @@ def format_date(date_str):
         return date_str
 
 
-def truncate_title(title, max_len=40):
+def truncate_title(title, max_len=35):
     if len(title) <= max_len:
         return title
     return title[:max_len-3] + "..."
@@ -90,11 +90,24 @@ def generate_paper_row(paper):
     open_issues = github.get("open_issues", "—")
 
     latest_change = "—"
-    if github.get("last_commit"):
+    latest_date = None
+
+    if github.get("last_commit") or github.get("latest_pr_date"):
         try:
             from datetime import datetime
-            commit_date = datetime.strptime(github["last_commit"], "%Y-%m-%dT%H:%M:%SZ")
-            latest_change = f"[{commit_date.strftime('%b %d, %Y')}]({paper_md})"
+            dates = []
+
+            if github.get("last_commit"):
+                commit_date = datetime.strptime(github["last_commit"], "%Y-%m-%dT%H:%M:%SZ")
+                dates.append(commit_date)
+
+            if github.get("latest_pr_date"):
+                pr_date = datetime.strptime(github["latest_pr_date"], "%Y-%m-%dT%H:%M:%SZ")
+                dates.append(pr_date)
+
+            if dates:
+                latest_date = max(dates)
+                latest_change = f"[{latest_date.strftime('%b %d, %Y')}]({paper_md})"
         except:
             latest_change = "—"
 

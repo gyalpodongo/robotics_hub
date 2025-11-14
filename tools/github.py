@@ -45,6 +45,16 @@ def fetch_github_metrics(github_url: str) -> GitHubMetrics:
     )
     open_prs = len(pulls_response.json()) if pulls_response.status_code == 200 else None
 
+    latest_pr_response = requests.get(
+        f"https://api.github.com/repos/{owner}/{repo}/pulls?state=all&sort=updated&direction=desc&per_page=1",
+        headers=headers
+    )
+    latest_pr_date = None
+    if latest_pr_response.status_code == 200:
+        prs = latest_pr_response.json()
+        if prs:
+            latest_pr_date = prs[0].get("updated_at")
+
     return GitHubMetrics(
         repo_url=github_url,
         stars=repo_data.get("stargazers_count"),
@@ -52,7 +62,8 @@ def fetch_github_metrics(github_url: str) -> GitHubMetrics:
         last_commit=repo_data.get("pushed_at"),
         open_prs=open_prs,
         open_issues=repo_data.get("open_issues_count"),
-        watchers=repo_data.get("watchers_count")
+        watchers=repo_data.get("watchers_count"),
+        latest_pr_date=latest_pr_date
     )
 
 

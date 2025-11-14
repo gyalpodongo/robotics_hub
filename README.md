@@ -28,19 +28,19 @@ This repository serves two purposes:
 
 | Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |
 |-------|-----|------|---------|--------|-----------|--------|---------------|----------|
-| [Universal Manipulation Interface: In-...](papers/2402.10329.md) | [Link](https://arxiv.org/abs/2402.10329v3) | Feb 15, 2024 | Chi et al. | ⭐[1.1k](https://github.com/real-stanford/universal_manipulation_interface)<br>🔀[201](https://github.com/real-stanford/universal_manipulation_interface) | [342](https://www.semanticscholar.org/paper/40beef770a0f6b8cb2aa90587988b61080c40ba9)<br>📈39 | 63 | [Jul 21, 2025](papers/2402.10329.md) | ❤️[1.8k](https://x.com/chichengcc/status/1758539728444629158) 🔁[370](https://x.com/chichengcc/status/1758539728444629158)<br>👁️[432.1k](https://x.com/chichengcc/status/1758539728444629158) |
+| [Universal Manipulation Interface...](papers/2402.10329.md) | [Link](https://arxiv.org/abs/2402.10329v3) | Feb 15, 2024 | Chi et al. | ⭐[1.1k](https://github.com/real-stanford/universal_manipulation_interface)<br>🔀[201](https://github.com/real-stanford/universal_manipulation_interface) | [342](https://www.semanticscholar.org/paper/40beef770a0f6b8cb2aa90587988b61080c40ba9)<br>📈39 | 63 | [Jul 22, 2025](papers/2402.10329.md) | ❤️[1.8k](https://x.com/chichengcc/status/1758539728444629158) 🔁[370](https://x.com/chichengcc/status/1758539728444629158)<br>👁️[432.1k](https://x.com/chichengcc/status/1758539728444629158) |
 
 ### [Vision-Language-Action Models](domains/vla.md)
 
 | Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |
 |-------|-----|------|---------|--------|-----------|--------|---------------|----------|
-| [OpenVLA: An Open-Source Vision-Langua...](papers/2406.09246.md) | [Link](https://arxiv.org/abs/2406.09246v3) | Jun 13, 2024 | Kim et al. | ⭐[4.4k](https://github.com/openvla/openvla)<br>🔀[527](https://github.com/openvla/openvla) | [1.1k](https://www.semanticscholar.org/paper/8f9ceb5ffad8e7a066dfc9d9aaa5153b714740ee)<br>📈191 | 91 | [Mar 23, 2025](papers/2406.09246.md) | ❤️[695](https://x.com/moo_jin_kim/status/1801548441102991771) 🔁[162](https://x.com/moo_jin_kim/status/1801548441102991771)<br>👁️[226.1k](https://x.com/moo_jin_kim/status/1801548441102991771) |
+| [OpenVLA: An Open-Source Vision-L...](papers/2406.09246.md) | [Link](https://arxiv.org/abs/2406.09246v3) | Jun 13, 2024 | Kim et al. | ⭐[4.4k](https://github.com/openvla/openvla)<br>🔀[527](https://github.com/openvla/openvla) | [1.1k](https://www.semanticscholar.org/paper/8f9ceb5ffad8e7a066dfc9d9aaa5153b714740ee)<br>📈191 | 91 | [Nov 09, 2025](papers/2406.09246.md) | ❤️[695](https://x.com/moo_jin_kim/status/1801548441102991771) 🔁[162](https://x.com/moo_jin_kim/status/1801548441102991771)<br>👁️[226.1k](https://x.com/moo_jin_kim/status/1801548441102991771) |
 
 ### [Robot Manipulation](domains/manipulation.md)
 
 | Paper | PDF | Date | Authors | GitHub | Citations | Issues | Latest Change | Twitter |
 |-------|-----|------|---------|--------|-----------|--------|---------------|----------|
-| [RUKA: Rethinking the Design of Humano...](papers/2504.13165.md) | [Link](https://arxiv.org/abs/2504.13165v1) | Apr 17, 2025 | Zorin et al. | ⭐[153](https://github.com/ruka-hand/RUKA)<br>🔀[20](https://github.com/ruka-hand/RUKA) | [4](https://www.semanticscholar.org/paper/dd9e6a02ba61cb4839a22c6f53eb867f95828ef8) | 3 | [Aug 11, 2025](papers/2504.13165.md) | ❤️[445](https://x.com/irmakkguzey/status/1913276064287305730) 🔁[100](https://x.com/irmakkguzey/status/1913276064287305730)<br>👁️[109.3k](https://x.com/irmakkguzey/status/1913276064287305730) |
+| [RUKA: Rethinking the Design of H...](papers/2504.13165.md) | [Link](https://arxiv.org/abs/2504.13165v1) | Apr 17, 2025 | Zorin et al. | ⭐[153](https://github.com/ruka-hand/RUKA)<br>🔀[20](https://github.com/ruka-hand/RUKA) | [4](https://www.semanticscholar.org/paper/dd9e6a02ba61cb4839a22c6f53eb867f95828ef8) | 3 | [Oct 09, 2025](papers/2504.13165.md) | ❤️[445](https://x.com/irmakkguzey/status/1913276064287305730) 🔁[100](https://x.com/irmakkguzey/status/1913276064287305730)<br>👁️[109.3k](https://x.com/irmakkguzey/status/1913276064287305730) |
 
 ---
 
@@ -86,6 +86,6 @@ If you find this repository useful, please consider citing:
 
 ---
 
-**Last Updated:** 2025-11-13 19:37:27 UTC
+**Last Updated:** 2025-11-13 19:41:21 UTC
 
 **Maintained by:** Gyalpo Dongo

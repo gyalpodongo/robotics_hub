@@ -21,6 +21,7 @@ class GitHubMetrics(BaseModel):
     open_prs: int | None = None
     open_issues: int | None = None
     watchers: int | None = None
+    latest_pr_date: str | None = None
 
 
 class TwitterMetrics(BaseModel):
