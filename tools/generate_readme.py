@@ -55,11 +55,9 @@ def generate_paper_row(paper):
         repo_url = github["repo_url"]
         stars = format_number(github.get("stars"))
         forks = format_number(github.get("forks"))
-        github_str = f"⭐[{stars}]({repo_url})<br>🔀[{forks}]({repo_url})<br> "
-    else:
-        github_str = "—<br> <br> "
+        github_str = f"⭐[{stars}]({repo_url}) 🔀[{forks}]({repo_url})"
 
-    citation_str = "—<br> <br> "
+    citation_str = "—"
     if semantic.get("citation_count") is not None:
         citations = format_number(semantic.get("citation_count"))
         influential = semantic.get("influential_citation_count")
@@ -67,20 +65,24 @@ def generate_paper_row(paper):
         if semantic.get("paper_id"):
             s2_url = f"https://www.semanticscholar.org/paper/{semantic['paper_id']}"
             if influential and influential > 0:
-                citation_str = f"[{citations}]({s2_url})<br>📈{influential}<br> "
+                citation_str = f"[{citations}]({s2_url}) (📈{influential})"
             else:
-                citation_str = f"[{citations}]({s2_url})<br> <br> "
+                citation_str = f"[{citations}]({s2_url})"
         else:
-            citation_str = f"{citations}<br> <br> "
+            citation_str = citations
 
-    twitter_str = "—<br> <br> "
+    twitter_str = "—"
     tweet_url = twitter.get("tweet_url")
     if tweet_url and (twitter.get("likes") or twitter.get("retweets") or twitter.get("views")):
-        likes = f"❤️[{format_number(twitter['likes'])}]({tweet_url})" if twitter.get("likes") else " "
-        retweets = f"🔁[{format_number(twitter['retweets'])}]({tweet_url})" if twitter.get("retweets") else " "
-        views = f"👁️[{format_number(twitter['views'])}]({tweet_url})" if twitter.get("views") else " "
+        parts = []
+        if twitter.get("likes"):
+            parts.append(f"❤️[{format_number(twitter['likes'])}]({tweet_url})")
+        if twitter.get("retweets"):
+            parts.append(f"🔁[{format_number(twitter['retweets'])}]({tweet_url})")
+        if twitter.get("views"):
+            parts.append(f"👁️[{format_number(twitter['views'])}]({tweet_url})")
 
-        twitter_str = f"{likes}<br>{retweets}<br>{views}"
+        twitter_str = "<br>".join(parts) if parts else "—"
 
     date = format_date(arxiv.get("published_date", ""))
     authors_short = arxiv["authors"][0].split()[-1] + " et al." if arxiv["authors"] else "—"
