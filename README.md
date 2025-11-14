@@ -1,6 +1,8 @@
-# 🤖 AIR Intelligence Hub
+# 🤖 Robotics Intelligence Hub
 
 > A curated collection of cutting-edge robotics research papers with real-world engagement metrics
+
+🔗 **Repository**: [github.com/gyalpodongo/robotics_hub](https://github.com/gyalpodongo/robotics_hub)
 
 [![Papers](https://img.shields.io/badge/Papers-3-blue)](.)
 [![Stars](https://img.shields.io/badge/GitHub%20Stars-5.6k-yellow)](.)
@@ -44,6 +46,60 @@ This repository serves two purposes:
 
 ---
 
+## 🚀 Setup
+
+### Prerequisites
+- Python 3.11+
+- [uv](https://github.com/astral-sh/uv) package manager
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/gyalpodongo/robotics_hub.git
+cd robotics_hub
+
+# Create virtual environment
+uv venv
+
+# Activate virtual environment
+source .venv/bin/activate  # On macOS/Linux
+# .venv\Scripts\activate   # On Windows
+
+# Install dependencies
+uv pip install google-genai arxiv requests python-dotenv pydantic
+
+# Copy and configure environment variables
+cp .env.example .env  # Edit with your API keys
+```
+
+### Required API Keys
+
+Add these to your `.env` file:
+```bash
+GEMINI_API_KEY=your_gemini_api_key
+GITHUB_PAT=your_github_personal_access_token
+TWITTER_BEARER_TOKEN=your_twitter_bearer_token  # Optional
+```
+
+### Usage
+
+```bash
+# Generate domain overview pages with AI trends
+.venv/bin/python tools/generate_domain_pages.py
+
+# Generate individual paper pages
+.venv/bin/python tools/generate_paper_pages.py
+
+# Update main README
+.venv/bin/python tools/generate_readme.py
+
+# Collect new papers from seed list
+.venv/bin/python tools/collect_papers.py
+```
+
+---
+
 ## 🔧 How It Works
 
 This repository automatically tracks robotics papers through:
@@ -54,7 +110,8 @@ This repository automatically tracks robotics papers through:
    - GitHub REST API (repository metrics)
    - Twitter API v2 (social engagement)
    - Semantic Scholar API (citation data)
-3. **Daily Updates**: Metrics refreshed automatically
+3. **AI-Powered Trends**: Gemini analyzes full PDFs to generate domain insights
+4. **Daily Updates**: Metrics refreshed automatically
 
 ## 📊 Metrics Legend
 
@@ -75,11 +132,11 @@ Data aggregated from public sources. Please cite original papers when using this
 If you find this repository useful, please consider citing:
 
 ```bibtex
-@misc{dongo2025airrepo,
-    title = {AIR Intelligence Hub},
+@misc{dongo2025roboticshub,
+    title = {Robotics Intelligence Hub},
     author = {Gyalpo Dongo},
     journal = {GitHub repository},
-    url = {https://github.com/gyalpo-dongo/air_repo},
+    url = {https://github.com/gyalpodongo/robotics_hub},
     year = {2025},
 }
 ```
